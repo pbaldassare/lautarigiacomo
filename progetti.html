@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progetti e iniziative · Comunità Lautari</title>
+  <meta name="description" content="Progetti, iniziative, eventi e collaborazioni della Comunità Lautari.">
+  <meta name="theme-color" content="#16483a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="progetti">
+  <script src="js/layout.js"></script>
+
+  <main id="contenuto">
+    <header class="phero phero--plain">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light">Progetti e iniziative</p>
+        <h1>Cosa stiamo costruendo, insieme</h1>
+        <p class="phero__lead">Progetti, iniziative, eventi e collaborazioni della Comunità Lautari. Ognuno è possibile grazie a chi sceglie di sostenerci.</p>
+      </div>
+    </header>
+
+    <section class="listing" aria-labelledby="listing-title">
+      <div class="wrap">
+        <h2 id="listing-title" class="sr-only">Elenco</h2>
+        <div class="filters" id="filtri" role="toolbar" aria-label="Filtra per tipo"></div>
+        <div class="igrid" id="elenco-iniziative" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="collab">
+      <div class="wrap collab__in">
+        <div>
+          <h2>Vuoi collaborare con noi?</h2>
+          <p>Scuole, parrocchie, aziende e associazioni: se hai un'idea per un'iniziativa insieme, scrivici.</p>
+        </div>
+        <div class="collab__actions">
+          <a class="btn btn--ghost" href="mailto:info@lautari.it"><svg class="ico"><use href="#i-mail"/></svg> info@lautari.it</a>
+          <button class="btn btn--dona" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/iniziative.js"></script>
+</body>
+</html>

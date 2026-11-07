@@ -1,0 +1,182 @@
+{
+  "_istruzioni": "Per aggiungere un contenuto copia un blocco esistente, cambia 'id' (solo minuscole e trattini) e i testi. tipo: progetto | iniziativa | evento | collaborazione. data: AAAA-MM-GG (facoltativa per i progetti). 'testo' è un elenco di paragrafi; per un sottotitolo usa {\"titolo\": \"...\"}, per un elenco puntato {\"elenco\": [\"...\", \"...\"]}. 'donazione' collega il pulsante Sostieni a uno dei progetti di js/config.js. 'dataTesto' (facoltativo) sostituisce la data mostrata, es. 'Fine 2015'. Per un evento aggiungi anche 'ora' e 'luogo'.",
+  "voci": [
+    {
+      "id": "drug-zero",
+      "tipo": "progetto",
+      "titolo": "Drug Zero",
+      "sommario": "Prevenzione nelle scuole: la comunità entra in classe e le classi vengono in comunità, per prevenire l'uso di sostanze e informare sulle conseguenze.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/10/formazione-e-prevenzione-lautari.jpg",
+      "data": null,
+      "stato": "In corso",
+      "inEvidenza": true,
+      "donazione": "drug-zero",
+      "testo": [
+        "Drug Zero porta nelle scuole l'esperienza diretta della comunità. Gli obiettivi sono due: prevenire l'uso di sostanze e informare con chiarezza sulle loro conseguenze.",
+        {
+          "titolo": "Noi da voi: la comunità a scuola"
+        },
+        "Un incontro di circa due ore in classe con operatori e ragazzi della comunità. Il costo è una donazione liberale più il rimborso del viaggio.",
+        {
+          "titolo": "Voi da noi: la scuola in comunità"
+        },
+        "Una giornata nella sede di Pozzolengo, dalle 10:00 alle 16:30, per vedere da vicino la vita in comunità. Il costo è di 10 € a persona, pasti inclusi.",
+        "Per informazioni: Dott.ssa Glenda Orlandi, assistente sociale, al numero 030 991 8700."
+      ]
+    },
+    {
+      "id": "salvagente",
+      "tipo": "progetto",
+      "titolo": "Salvagente",
+      "sommario": "Accoglienza residenziale per persone in forte svantaggio sociale: disoccupati di lungo periodo, genitori soli, over 40 espulsi dal lavoro, donne che hanno subito maltrattamenti.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/il-percorso-in-comunita-02.jpg",
+      "data": null,
+      "stato": "In corso",
+      "inEvidenza": true,
+      "donazione": "salvagente",
+      "testo": [
+        "Salvagente offre un posto sicuro a chi attraversa un momento di grave difficoltà, anche senza una storia di dipendenza.",
+        {
+          "titolo": "A chi si rivolge"
+        },
+        {
+          "elenco": [
+            "Disoccupati di lungo periodo",
+            "Adulti soli con figli",
+            "Persone over 40 espulse dal mondo del lavoro",
+            "Persone con difficoltà abitative",
+            "Donne con precedenti di maltrattamenti"
+          ]
+        },
+        {
+          "titolo": "Obiettivi"
+        },
+        {
+          "elenco": [
+            "Accoglienza residenziale",
+            "Integrazione nelle attività della comunità",
+            "Prevenzione della cronicizzazione dei disturbi dell'umore",
+            "Reinserimento sociale"
+          ]
+        },
+        "Si accede su segnalazione dei Servizi Sociali del Comune di residenza. L'accoglienza dura 6 mesi, prorogabili di altri 6."
+      ]
+    },
+    {
+      "id": "grest",
+      "tipo": "progetto",
+      "titolo": "Grest",
+      "sommario": "Prevenzione e informazione sulla droga per animatori e ragazzi dei centri estivi parrocchiali, e per i loro genitori.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/10/sport-vita-in-comunita-02.jpg",
+      "data": null,
+      "stato": "In corso",
+      "inEvidenza": false,
+      "donazione": "grest",
+      "testo": [
+        "Il progetto Grest porta la prevenzione nei centri estivi parrocchiali, rivolgendosi ad animatori, ragazzi e genitori.",
+        {
+          "titolo": "Noi da voi"
+        },
+        "Un incontro di circa due ore con un gruppo di 20-30 ragazzi. Il contributo è a discrezione, con rimborso delle spese.",
+        {
+          "titolo": "Voi da noi"
+        },
+        "Una giornata nella sede di Pozzolengo, dalle 10:00 alle 16:30, a 10 € a persona, pasti inclusi."
+      ]
+    },
+    {
+      "id": "prevenzione-e-informazione",
+      "tipo": "progetto",
+      "titolo": "Prevenzione e informazione",
+      "sommario": "Le testimonianze dei ragazzi in parrocchie, scuole e centri giovanili: chi sta facendo il percorso racconta la propria storia.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/vita-in-comunita-lautari-02.jpg",
+      "data": null,
+      "stato": "In corso",
+      "inEvidenza": false,
+      "donazione": "prevenzione",
+      "testo": [
+        "La prevenzione e l'informazione sono una delle eccellenze della nostra struttura. I ragazzi portano la loro testimonianza in parrocchie, scuole e centri giovanili.",
+        {
+          "titolo": "Perché lo facciamo"
+        },
+        {
+          "elenco": [
+            "Capacità relazionali: parlare in pubblico della propria storia aiuta i ragazzi a crescere",
+            "Raccolta fondi: incontrare persone che credono nel nostro progetto e scelgono di sostenerlo",
+            "Reinserimento: creare legami con il territorio"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aiuti-alimentari-2025",
+      "tipo": "collaborazione",
+      "titolo": "Aiuti alimentari con il Banco Alimentare della Lombardia",
+      "sommario": "Nel 2025, con il programma PN Inclusione, abbiamo sostenuto 110 persone in grave deprivazione distribuendo 96.030 tra pacchi e pasti.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/vita-in-comunita-lautari-03.jpg",
+      "data": "2025-12-31",
+      "inEvidenza": true,
+      "testo": [
+        "Nel 2025 la Comunità ha partecipato alla distribuzione di aiuti alimentari del programma PN Inclusione, con capofila il Banco Alimentare della Lombardia \"Danilo Fossati\" ODV.",
+        {
+          "titolo": "I numeri del 2025"
+        },
+        {
+          "elenco": [
+            "110 persone in condizione di grave deprivazione sostenute",
+            "3.224 kg di prodotti alimentari",
+            "96.030 pacchi e/o pasti distribuiti"
+          ]
+        }
+      ],
+      "dataTesto": "Anno 2025"
+    },
+    {
+      "id": "borgo-la-caccia",
+      "tipo": "collaborazione",
+      "titolo": "Borgo la Caccia ed Eno Caccia",
+      "sommario": "Cantina, vigneto e allevamento di cavalli sulle colline moreniche del Garda: il lavoro che diventa reinserimento.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/la-cantina-lautari.png",
+      "data": null,
+      "stato": "Attiva",
+      "inEvidenza": false,
+      "link": {
+        "testo": "Visita borgolacaccia.it",
+        "url": "https://www.borgolacaccia.it/"
+      },
+      "testo": [
+        "La Tenuta Borgo la Caccia, a Pozzolengo, è il luogo dove si svolge gran parte delle attività lavorative della comunità. Si estende per 90 ettari, di cui 30 di vigneti, sulle colline moreniche a ridosso del Lago di Garda.",
+        "Borgo la Caccia Horses nasce all'inizio degli anni '90 per l'allevamento e la preparazione agonistica di cavalli da salto ostacoli. Borgo la Caccia Wine and Events nasce all'inizio degli anni 2000 ed è parte di Eno Caccia, la cooperativa sociale agricola di reinserimento.",
+        "Qui i ragazzi imparano un mestiere e, finito il percorso, possono essere assunti nelle nostre cooperative di lavoro."
+      ]
+    },
+    {
+      "id": "cooperativa-insieme",
+      "tipo": "collaborazione",
+      "titolo": "Falegnameria e restauro con la Cooperativa Insieme",
+      "sommario": "Lavorazioni pregiate in legno, creazioni su misura e restauri: un mestiere vero per chi esce dal percorso.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/il-restauro-lautari.png",
+      "data": null,
+      "stato": "Attiva",
+      "inEvidenza": false,
+      "testo": [
+        "Con la Cooperativa Insieme Onlus i ragazzi lavorano in falegnameria e nel restauro: lavorazioni pregiate in legno, creazioni su misura e restauri.",
+        "È una delle cooperative di reinserimento in cui gli ex ospiti possono trovare lavoro al termine del percorso."
+      ]
+    },
+    {
+      "id": "nuova-sede-pozzolengo",
+      "tipo": "iniziativa",
+      "titolo": "La nuova sede di Pozzolengo",
+      "sommario": "Inaugurata a fine 2015 in Via Monte Ingrana, è stata costruita grazie al sostegno di tanti amici della comunità.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/10/sede-brescia-lautari-comunita.jpg",
+      "data": "2015-12-01",
+      "inEvidenza": false,
+      "testo": [
+        "La nuova sede centrale di Via Monte Ingrana 2, a Pozzolengo (BS), è stata inaugurata a fine 2015. È uno dei progetti portati avanti dal presidente Andrea Bonomelli.",
+        "Ringraziamo tutti i sostenitori che con il loro aiuto l'hanno resa possibile."
+      ],
+      "dataTesto": "Fine 2015"
+    }
+  ]
+}

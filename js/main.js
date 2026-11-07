@@ -2,6 +2,7 @@
   "use strict";
 
   const D = window.DONAZIONI;
+  if (window.LAYOUT_BOTTOM) document.body.insertAdjacentHTML("beforeend", window.LAYOUT_BOTTOM);
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const euro = (n) => n.toLocaleString("it-IT") + " €";
@@ -50,23 +51,25 @@
 
   /* ---------- Donazione rapida (hero) ---------- */
   const quick = $("#quick");
-  const quickImpact = $("#quick-impact");
-  const quickAmount = $("#quick-amount");
   $$("[data-costo]").forEach((el) => (el.textContent = D.costoGiornata));
 
-  function updateQuick() {
-    quickAmount.textContent = state.importo.toLocaleString("it-IT");
-    quickImpact.textContent = impatto(state.importo, "una-tantum");
-  }
-  renderChips($("#quick-chips"), "quick-amount", (v) => {
-    state.importo = v;
+  if (quick) {
+    const quickImpact = $("#quick-impact");
+    const quickAmount = $("#quick-amount");
+    const updateQuick = () => {
+      quickAmount.textContent = state.importo.toLocaleString("it-IT");
+      quickImpact.textContent = impatto(state.importo, "una-tantum");
+    };
+    renderChips($("#quick-chips"), "quick-amount", (v) => {
+      state.importo = v;
+      updateQuick();
+    });
     updateQuick();
-  });
-  updateQuick();
-  quick.addEventListener("submit", (e) => {
-    e.preventDefault();
-    openDonate({ importo: state.importo, step: 2 });
-  });
+    quick.addEventListener("submit", (e) => {
+      e.preventDefault();
+      openDonate({ importo: state.importo, step: 2 });
+    });
+  }
 
   /* ---------- Dialog di donazione ---------- */
   const dlg = $("#donate");
@@ -242,7 +245,7 @@
   function openDonate(opts = {}) {
     if (opts.importo) state.importo = Number(opts.importo);
     if (opts.frequenza) state.frequenza = opts.frequenza;
-    if (opts.progetto) state.progetto = opts.progetto;
+    if (opts.progetto) state.progetto = D.progetti.some((p) => p.id === opts.progetto) ? opts.progetto : "generale";
     state.metodo = opts.metodo || null;
     state.presetMetodo = Boolean(opts.metodo);
 
