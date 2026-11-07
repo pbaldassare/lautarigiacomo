@@ -1,0 +1,12 @@
+{
+  "name": "comunita-lautari",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sito statico della Comunità Lautari",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

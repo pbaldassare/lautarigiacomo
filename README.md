@@ -12,6 +12,14 @@ Poi apri http://localhost:5173. Il link `http://localhost:5173/#dona` (valido su
 
 > Serve un server: aprendo i file con doppio clic la sezione Progetti e iniziative non si carica.
 
+## Pubblicazione (Cloudflare Pages)
+
+Il sito non ha bisogno di compilazione, ma Cloudflare Pages esegue `npm run build`: lo script `scripts/build.mjs` copia solo i file pubblici (pagine, `css/`, `js/`, `contenuti/`) nella cartella `dist/`, senza README, script SQL e file di sviluppo.
+
+Impostazioni consigliate in Cloudflare Pages: build command `npm run build`, output directory `dist`.
+
+Dopo la prima pubblicazione aggiungi l'indirizzo `https://…/area-riservata.html` tra i Redirect URLs di Supabase (vedi "Area riservata").
+
 ## Pagine
 
 | File | Contenuto |
