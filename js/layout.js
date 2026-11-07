@@ -14,14 +14,17 @@
     { href: "percorso.html", label: "Il percorso", page: "percorso", icon: "i-route" },
     { href: "chi-siamo.html", label: "Chi siamo", page: "chi-siamo", icon: "i-users" },
     { href: "progetti.html", label: "Progetti", page: "progetti", icon: "i-grid", extra: " sidebar__link--key" },
-    { href: "blog.html", label: "Blog", page: "blog", icon: "i-doc" },
+    { href: "blog.html", label: "Blog e media", page: "blog", icon: "i-doc" },
     { href: "sedi.html", label: "Sedi", page: "sedi", icon: "i-pin" },
     { href: "faq.html", label: "FAQ", page: "faq", icon: "i-question" },
     { href: "sostienici.html", label: "Sostienici", page: "sostienici", icon: "i-heart", extra: " sidebar__link--support" }
   ];
 
   // Pagine raggiungibili dal footer ma non dalla barra
-  const EXTRA = [{ href: "cosa-facciamo.html", label: "Cosa facciamo" }];
+  const EXTRA = [
+    { href: "cosa-facciamo.html", label: "Cosa facciamo" },
+    { href: "comunicazione.html", label: "Media e comunicazione" }
+  ];
 
   const page = document.body.dataset.page || "";
 
@@ -48,6 +51,12 @@
     <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/></g></symbol>
     <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></g></symbol>
     <symbol id="i-question" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></g></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9H17l.5-4h-4V8.8c0-.5.3-.8.5-.8z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></g></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></g></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.5 2.8 2.4 4.6 5 5"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
   </svg>`;
 
   const top = `
@@ -100,7 +109,8 @@
       </nav>
       <div class="footer__links">
         <a href="chi-siamo.html#trasparenza">Amministrazione trasparente</a>
-        <a href="https://www.facebook.com/comunita.lautari/" rel="noopener" target="_blank">Facebook</a>
+        <a class="footer__social" href="https://www.facebook.com/comunita.lautari/" rel="noopener" target="_blank"><svg class="ico"><use href="#i-facebook"/></svg> Seguici su Facebook</a>
+        <a href="comunicazione.html#area-stampa">Area stampa</a>
         <a href="https://www.lautari.it/wp-content/uploads/2018/10/privacy-policy-lautari-it.pdf" rel="noopener" target="_blank">Privacy</a>
         <button class="btn btn--dona" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
       </div>

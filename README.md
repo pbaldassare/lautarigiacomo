@@ -24,6 +24,7 @@ Poi apri http://localhost:5173. Il link `http://localhost:5173/#dona` (valido su
 | `iniziativa.html?id=…` | Pagina di dettaglio di ogni voce |
 | `blog.html` | Blog: articolo in evidenza, filtro per categoria, elenco |
 | `articolo.html?id=…` | Pagina di ogni articolo, con condivisione e articoli correlati |
+| `comunicazione.html` | Media e comunicazione: testate, campagne ed eventi, rassegna stampa, social, messaggio da condividere, area stampa |
 | `aiuto.html` | Chiedi aiuto: come contattarci, come si entra, chi può accedere, familiari |
 | `sedi.html` | Sede centrale e unità locali |
 | `faq.html` | Domande frequenti |
@@ -96,3 +97,13 @@ Gli articoli stanno in `contenuti/blog.json`. Copia un blocco in `articoli` e ca
 ## Aggiornare i numeri dell'impatto
 
 La sezione "Il nostro impatto" (home, Chi siamo, Cosa facciamo, Sostienici) prende tutti i numeri da `js/impatto.js`, oggetto `IMPATTO`. I dati attuali vengono dal Bilancio sociale 2022 e, per gli aiuti alimentari, dal programma PN Inclusione 2025. Quando esce un nuovo bilancio sociale basta aggiornare quei valori e il link alla fonte.
+
+## Rassegna stampa, social e materiali
+
+La pagina Media e comunicazione legge `contenuti/comunicazione.json`:
+
+- `stampa`: un blocco per articolo (testata, titolo, sintesi, data `AAAA-MM-GG` o `null`, tipo, url). Vengono raggruppati per anno, i più recenti in alto.
+- `social`: compila `url` per far comparire Instagram, YouTube o TikTok; i canali senza indirizzo restano nascosti.
+- `materiali`: documenti e logo da scaricare.
+
+Campagne ed eventi stanno in `contenuti/iniziative.json` (tipo `evento` o `iniziativa`): compaiono sia nella pagina Progetti sia in Media e comunicazione.

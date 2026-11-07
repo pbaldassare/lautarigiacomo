@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Media e comunicazione · Comunità Lautari</title>
+  <meta name="description" content="Campagne, eventi, rassegna stampa e canali social della Comunità Lautari. Materiali per giornalisti e per chi vuole parlare di noi.">
+  <meta name="theme-color" content="#336739">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="blog">
+  <script src="js/layout.js"></script>
+
+  <main id="contenuto">
+    <header class="phero phero--plain">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light">Media e comunicazione</p>
+        <h1>La voce della comunità</h1>
+        <p class="phero__lead">Le nostre campagne, gli eventi, cosa scrivono di noi i giornali e dove seguirci. Ogni volta che qualcuno parla di Lautari, qualcun altro scopre che uscire dalla dipendenza è possibile.</p>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Blog e media">
+      <div class="wrap tabs__in">
+        <a href="blog.html">Articoli del blog</a>
+        <a href="comunicazione.html" aria-current="page">Media e comunicazione</a>
+      </div>
+    </nav>
+
+    <!-- HANNO PARLATO DI NOI -->
+    <section class="mentions" aria-labelledby="mentions-title">
+      <div class="wrap mentions__in">
+        <h2 id="mentions-title">Hanno parlato di noi</h2>
+        <ul class="mentions__list" id="testate"></ul>
+      </div>
+    </section>
+
+    <!-- CAMPAGNE ED EVENTI -->
+    <section aria-labelledby="campagne-title">
+      <div class="wrap">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="eyebrow">Campagne ed eventi</p>
+            <h2 id="campagne-title">Cosa stiamo facendo conoscere</h2>
+          </div>
+          <a class="arrowlink" href="progetti.html">Tutti i progetti e gli eventi <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="camps" id="campagne" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- RASSEGNA STAMPA -->
+    <section class="pressbox" id="stampa" aria-labelledby="stampa-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Rassegna stampa</p>
+          <h2 id="stampa-title">Cosa scrivono di noi</h2>
+          <p>Articoli, interviste e reportage sulla Comunità Lautari. Gli articoli si aprono sul sito della testata.</p>
+        </div>
+        <div id="rassegna" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- SEGUICI -->
+    <section id="seguici" aria-labelledby="seguici-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Seguici</p>
+          <h2 id="seguici-title">La vita in comunità, ogni giorno</h2>
+          <p>Sui nostri canali raccontiamo le giornate dei ragazzi, gli eventi e le iniziative nelle piazze.</p>
+        </div>
+        <div class="socials" id="social"></div>
+      </div>
+    </section>
+
+    <!-- DIFFONDI -->
+    <section class="spread" id="diffondi" aria-labelledby="diffondi-title">
+      <div class="wrap spread__in">
+        <div>
+          <p class="eyebrow">Diffondi</p>
+          <h2 id="diffondi-title">Aiutaci a farci conoscere</h2>
+          <p>Condividere costa un clic e può arrivare a chi ha bisogno di aiuto, o a chi può darlo. Il messaggio è già pronto.</p>
+        </div>
+        <div class="spread__box">
+          <p class="spread__msg" id="msg-diffondi"></p>
+          <div class="spread__actions">
+            <a class="share__btn" id="share-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="share__btn" id="share-fb" href="#" target="_blank" rel="noopener">Facebook</a>
+            <button type="button" class="share__btn" id="share-copy"><svg class="ico"><use href="#i-copy"/></svg> <span>Copia il messaggio</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREA STAMPA -->
+    <section id="area-stampa" aria-labelledby="area-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Area stampa</p>
+          <h2 id="area-title">Materiali per giornalisti e scuole</h2>
+          <p>Documenti e logo da scaricare. Per interviste, foto o visite in comunità scrivi a <a href="mailto:info@lautari.it">info@lautari.it</a> o chiama il <a href="tel:+390309918700">030 991 8700</a>.</p>
+        </div>
+        <div class="docs" id="materiali"></div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap final__in">
+        <h2>Le parole aprono porte. Le donazioni le tengono aperte.</h2>
+        <button class="btn btn--dona btn--xl" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/comunicazione.js"></script>
+</body>
+</html>

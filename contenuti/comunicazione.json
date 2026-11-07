@@ -1,0 +1,97 @@
+{
+  "_istruzioni": "Rassegna stampa, canali social e materiali della pagina Media e comunicazione. Per aggiungere un articolo copia un blocco in 'stampa' (data: AAAA-MM-GG, oppure null se non nota). Per un canale social compila 'url': i canali con url vuoto non vengono mostrati. Eventi e campagne si aggiungono in contenuti/iniziative.json.",
+  "social": [
+    { "id": "facebook", "nome": "Facebook", "account": "Comunità Lautari", "url": "https://www.facebook.com/comunita.lautari/" },
+    { "id": "instagram", "nome": "Instagram", "account": "", "url": "" },
+    { "id": "youtube", "nome": "YouTube", "account": "", "url": "" },
+    { "id": "tiktok", "nome": "TikTok", "account": "", "url": "" }
+  ],
+  "stampa": [
+    {
+      "testata": "MOW",
+      "titolo": "Siamo stati a Pozzolengo dalla Comunità Lautari: la grande storia di Davide",
+      "sintesi": "Un reportage dentro la comunità, con la storia di Davide e un'intervista al presidente Andrea Bonomelli.",
+      "data": "2026-08-08",
+      "tipo": "Reportage",
+      "url": "https://mowmag.com/attualita/siamo-stati-a-sirmione-dalla-comunita-lautari-solo-qui-ho-imparato-a-guardare-in-faccia-la-realta-la-grande-storia-di-davide-e-due-parole-con-il-presidente-andrea-bonomelli-siamo-apolitici-ma-la-sinistra-fatica-ad-accettare-i-nostri-inviti"
+    },
+    {
+      "testata": "Notizie.it",
+      "titolo": "Comunità Lautari celebra 30 anni di Olimpiadi della Vita a Pozzolengo",
+      "sintesi": "La 30ª edizione delle Olimpiadi della Vita, con circa 300 partecipanti dalle sedi Lautari.",
+      "data": "2026-08-05",
+      "tipo": "Notizia",
+      "url": "https://www.notizie.it/comunita-lautari-celebra-30-anni-di-olimpiadi-della-vita-a-pozzolengo/"
+    },
+    {
+      "testata": "La Voce del Popolo",
+      "titolo": "Le Olimpiadi della Vita con la Comunità Lautari",
+      "sintesi": "Dieci giorni di sport a Borgo La Caccia, dalla pallavolo alle maratone di 21 e 32 km.",
+      "data": "2026-08-04",
+      "tipo": "Notizia",
+      "url": "https://www.lavocedelpopolo.it/index.php/garda-e-valsabbia/le-olimpiadi-della-vita-con-la-comunita-lautari"
+    },
+    {
+      "testata": "ANSA",
+      "titolo": "La Comunità Lautari lancia legge popolare su droga per abolire 'modica quantità'",
+      "sintesi": "La raccolta firme nazionale con mille banchetti e i quattro punti della proposta.",
+      "data": "2026-06-27",
+      "tipo": "Notizia",
+      "url": "https://www.ansa.it/lombardia/notizie/2026/06/27/la-comunita-lautari-lancia-legge-popolare-su-droga-per-abolire-modica-quantita_0998db70-a233-43cd-80cb-16a7ef03f8e6.html"
+    },
+    {
+      "testata": "Luce! – QN",
+      "titolo": "\"Dobbiamo crederci più di loro\": dentro il modello Lautari contro la dipendenza",
+      "sintesi": "Intervista alla responsabile terapeutica sul modello fondato sul lavoro e sull'autosostentamento.",
+      "data": "2026-04-24",
+      "tipo": "Intervista",
+      "url": "https://www.quotidiano.net/luce/attualita/lautari-dipendenze-intervista-psicologa-ca1612de"
+    },
+    {
+      "testata": "Luce! – QN",
+      "titolo": "Comunità Lautari, dal 1992 una grande famiglia che trasforma il lavoro in libertà",
+      "sintesi": "Intervista al presidente Andrea Bonomelli sulla storia e sull'oggi della comunità.",
+      "data": "2026-04-17",
+      "tipo": "Intervista",
+      "url": "https://www.quotidiano.net/luce/attualita/comunita-lautari-dal-1992-una-grande-famiglia-che-trasforma-il-lavoro-in-liberta-5a85d68e"
+    },
+    {
+      "testata": "Il Giorno",
+      "titolo": "Lautari in Festa con ospiti e amici: \"Un messaggio di speranza\"",
+      "sintesi": "Oltre mille persone alla festa della comunità a Borgo La Caccia.",
+      "data": "2025-04-15",
+      "tipo": "Notizia",
+      "url": "https://www.ilgiorno.it/brescia/cronaca/lautari-in-festa-con-ospiti-09cb54b2"
+    },
+    {
+      "testata": "Il Giorno",
+      "titolo": "\"Ho bisogno di me, scatti di indipendenza\": la comunità Lautari protagonista di una mostra fotografica",
+      "sintesi": "33 fotografie sulla vita in comunità inaugurate al Senato.",
+      "data": "2024-12-12",
+      "tipo": "Notizia",
+      "url": "https://www.ilgiorno.it/brescia/cultura/mostra-ho-bisogno-di-me-scatti-indipendenza-vgplvrjj"
+    },
+    {
+      "testata": "9Colonne",
+      "titolo": "Exhibition at European Parliament tells stories of recovery and independence",
+      "sintesi": "La mostra \"Ho bisogno di me\" al Parlamento europeo di Strasburgo (in inglese).",
+      "data": null,
+      "tipo": "Notizia",
+      "url": "https://9colonne.it/554605/exhibition-at-european-parliament-tells-stories-of-recovery-and-independence"
+    },
+    {
+      "testata": "BsNews.it",
+      "titolo": "Lautari, a Pozzolengo una comunità aperta per aiutare le vittime delle dipendenze",
+      "sintesi": "La storia della cooperativa e del Progetto Salvagente (contenuto promozionale).",
+      "data": "2021-05-24",
+      "tipo": "Speciale",
+      "url": "https://bsnews.it/video/lautari-comunita-aperta-per-aiutare-vittime-dipendenze/"
+    }
+  ],
+  "materiali": [
+    { "titolo": "Brochure informativa", "descrizione": "Chi siamo, il percorso, le regole", "url": "https://www.lautari.it/wp-content/uploads/2018/09/brochure-informativa-lautari.pdf" },
+    { "titolo": "Libretto \"Droga e famiglia\"", "descrizione": "Per i familiari di chi è in difficoltà", "url": "https://www.lautari.it/wp-content/uploads/2018/10/La-famiglia-viva.pdf" },
+    { "titolo": "Bilancio sociale 2022", "descrizione": "Attività, persone e risultati", "url": "https://www.lautari.it/wp-content/uploads/2024/02/BILANCIO-SOCIALE-COOP-LAUTARI-2022.pdf" },
+    { "titolo": "Logo della Comunità", "descrizione": "Per articoli e locandine", "url": "https://www.lautari.it/wp-content/themes/white-theme/img/comunita-lautari.png" }
+  ]
+}

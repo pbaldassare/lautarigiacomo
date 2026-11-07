@@ -2,6 +2,109 @@
   "_istruzioni": "Per aggiungere un contenuto copia un blocco esistente, cambia 'id' (solo minuscole e trattini) e i testi. tipo: progetto | iniziativa | evento | collaborazione. data: AAAA-MM-GG (facoltativa per i progetti). 'testo' è un elenco di paragrafi; per un sottotitolo usa {\"titolo\": \"...\"}, per un elenco puntato {\"elenco\": [\"...\", \"...\"]}. 'donazione' collega il pulsante Sostieni a uno dei progetti di js/config.js. 'dataTesto' (facoltativo) sostituisce la data mostrata, es. 'Fine 2015'. Per un evento aggiungi anche 'ora' e 'luogo'.",
   "voci": [
     {
+      "id": "raccolta-firme-legge-popolare-2026",
+      "tipo": "iniziativa",
+      "titolo": "Una legge di iniziativa popolare contro la droga",
+      "sommario": "Nella Giornata internazionale contro le droghe la Comunità ha lanciato una raccolta firme nazionale, con mille banchetti nelle piazze italiane.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/10/formazione-e-prevenzione-lautari.jpg",
+      "data": "2026-06-26",
+      "stato": "In corso",
+      "inEvidenza": true,
+      "link": {
+        "testo": "Leggi la notizia su ANSA",
+        "url": "https://www.ansa.it/lombardia/notizie/2026/06/27/la-comunita-lautari-lancia-legge-popolare-su-droga-per-abolire-modica-quantita_0998db70-a233-43cd-80cb-16a7ef03f8e6.html"
+      },
+      "testo": [
+        "Il 26 giugno 2026, Giornata internazionale contro l'abuso e il traffico illecito di droga, il presidente Andrea Bonomelli ha presentato una proposta di legge di iniziativa popolare e una mobilitazione nazionale per raccogliere le firme.",
+        {
+          "titolo": "I punti della proposta"
+        },
+        {
+          "elenco": [
+            "Pene più severe per gli spacciatori",
+            "Eliminazione della \"modica quantità\" che si può detenere",
+            "Un piano nazionale di sostegno economico e amministrativo per il reinserimento degli ex tossicodipendenti",
+            "Programmi di formazione e supporto per le famiglie, con il coinvolgimento stabile delle comunità terapeutiche"
+          ]
+        },
+        "La raccolta firme passa da mille banchetti nelle principali città italiane. L'appello è rivolto a tutte le forze politiche."
+      ]
+    },
+    {
+      "id": "olimpiadi-della-vita-2026",
+      "tipo": "evento",
+      "titolo": "Olimpiadi della Vita 2026: trent'anni di sport e rinascita",
+      "sommario": "Dal 10 al 20 agosto, a Borgo La Caccia, circa 300 ragazzi delle sedi Lautari si sono sfidati nella 30ª edizione.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/vita-in-comunita-lautari-02.jpg",
+      "data": "2026-08-10",
+      "luogo": "Borgo La Caccia, Pozzolengo (BS)",
+      "inEvidenza": true,
+      "link": {
+        "testo": "Leggi l'articolo su La Voce del Popolo",
+        "url": "https://www.lavocedelpopolo.it/index.php/garda-e-valsabbia/le-olimpiadi-della-vita-con-la-comunita-lautari"
+      },
+      "testo": [
+        "Le Olimpiadi della Vita sono l'appuntamento sportivo dell'estate in comunità. Nel 2026 hanno compiuto trent'anni: dal 10 al 20 agosto circa 300 partecipanti, arrivati dalle sedi di Pozzolengo, Bedizzole, Como, Pordenone, Roma e Firenze, si sono ritrovati alla tenuta di Borgo La Caccia.",
+        {
+          "titolo": "Le discipline"
+        },
+        {
+          "elenco": [
+            "Calcio e pallavolo",
+            "Padel e biliardo",
+            "Ciclismo e nuoto",
+            "Atletica e maratone di 21 e 32 km"
+          ]
+        },
+        "Il tema dell'edizione era l'antica Grecia, con il motto \"conosci te stesso\". Il programma è stato presentato a Palazzo Broletto, sede della Provincia di Brescia, con il patrocinio della Provincia e del Comune di Pozzolengo. I vincitori potranno partecipare alla Maratona di Marrakech."
+      ]
+    },
+    {
+      "id": "lautari-in-festa-2026",
+      "tipo": "evento",
+      "titolo": "Lautari in Festa",
+      "sommario": "La festa annuale della comunità a Borgo La Caccia: famiglie, operatori, amici e istituzioni insieme ai ragazzi.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/10/sede-brescia-lautari-comunita.jpg",
+      "data": "2026-04-18",
+      "luogo": "Borgo La Caccia, Pozzolengo (BS)",
+      "inEvidenza": false,
+      "link": {
+        "testo": "Leggi l'articolo su Il Giorno (edizione 2025)",
+        "url": "https://www.ilgiorno.it/brescia/cronaca/lautari-in-festa-con-ospiti-09cb54b2"
+      },
+      "testo": [
+        "Ogni primavera la comunità apre le porte della tenuta di Borgo La Caccia per la sua festa. Nel 2026 si è svolta sabato 18 aprile.",
+        "All'edizione 2025 hanno partecipato oltre mille persone tra famiglie, operatori, amici e istituzioni. Durante la festa sono stati premiati i protagonisti delle Olimpiadi della Vita ed è stata presentata la mostra \"Ho bisogno di me\"."
+      ]
+    },
+    {
+      "id": "mostra-ho-bisogno-di-me",
+      "tipo": "iniziativa",
+      "titolo": "\"Ho bisogno di me, scatti di indipendenza\": la mostra",
+      "sommario": "33 fotografie sulla vita in comunità, esposte al Senato, al Pirellone di Milano e al Parlamento europeo di Strasburgo.",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/chi-siamo-lautari-comunita-02.jpg",
+      "data": "2024-12-11",
+      "inEvidenza": true,
+      "link": {
+        "testo": "Leggi l'articolo su Il Giorno",
+        "url": "https://www.ilgiorno.it/brescia/cultura/mostra-ho-bisogno-di-me-scatti-indipendenza-vgplvrjj"
+      },
+      "testo": [
+        "\"Ho bisogno di me, scatti di indipendenza\" è una mostra fotografica itinerante di 33 immagini di Beppe e Milla Prandelli, realizzate in due anni dentro la comunità. Le stesse foto compongono il calendario 2025 della Comunità Lautari, pubblicato per i suoi 33 anni.",
+        {
+          "titolo": "Le tappe"
+        },
+        {
+          "elenco": [
+            "Roma, Senato della Repubblica, Sala Zuccari di Palazzo Giustiniani: inaugurazione l'11 dicembre 2024",
+            "Milano, Pirellone (Consiglio regionale della Lombardia): dal 22 aprile all'8 maggio 2025",
+            "Strasburgo, Parlamento europeo: una selezione di 13 fotografie"
+          ]
+        },
+        "La mostra accompagna il libro \"Ho bisogno di me\" curato da Giuseppe Spatola."
+      ]
+    },
+    {
       "id": "drug-zero",
       "tipo": "progetto",
       "titolo": "Drug Zero",
@@ -9,7 +112,7 @@
       "immagine": "https://www.lautari.it/wp-content/uploads/2018/10/formazione-e-prevenzione-lautari.jpg",
       "data": null,
       "stato": "In corso",
-      "inEvidenza": true,
+      "inEvidenza": false,
       "donazione": "drug-zero",
       "testo": [
         "Drug Zero porta nelle scuole l'esperienza diretta della comunità. Gli obiettivi sono due: prevenire l'uso di sostanze e informare con chiarezza sulle loro conseguenze.",
@@ -32,7 +135,7 @@
       "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/il-percorso-in-comunita-02.jpg",
       "data": null,
       "stato": "In corso",
-      "inEvidenza": true,
+      "inEvidenza": false,
       "donazione": "salvagente",
       "testo": [
         "Salvagente offre un posto sicuro a chi attraversa un momento di grave difficoltà, anche senza una storia di dipendenza.",
@@ -115,7 +218,7 @@
       "sommario": "Nel 2025, con il programma PN Inclusione, abbiamo sostenuto 110 persone in grave deprivazione distribuendo 96.030 tra pacchi e pasti.",
       "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/chi-siamo-lautari-comunita-02.jpg",
       "data": "2025-12-31",
-      "inEvidenza": true,
+      "inEvidenza": false,
       "testo": [
         "Nel 2025 la Comunità ha partecipato alla distribuzione di aiuti alimentari del programma PN Inclusione, con capofila il Banco Alimentare della Lombardia \"Danilo Fossati\" ODV.",
         {
