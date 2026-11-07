@@ -819,3 +819,77 @@ a.helpcard--main:hover { background: var(--green-900); }
   .picker { grid-template-columns: 64px 1fr auto; gap: 14px; }
   .picker img { width: 64px; height: 64px; }
 }
+
+/* =====================================================================
+   HOME PIÙ COLORATA (solo verde scuro, verde chiaro e bianco)
+   ===================================================================== */
+[data-page="home"] .eyebrow {
+  display: inline-block; padding: 5px 14px; border-radius: 999px;
+  background: var(--lime); color: var(--ink);
+}
+
+/* Hero: accento verde chiaro sui fatti */
+[data-page="home"] .hero__facts li { background: rgba(188, 207, 85, .18); border-color: var(--lime); }
+[data-page="home"] .hero__facts strong { color: var(--lime-light); }
+
+/* Chi siamo in breve: tre card, tre colori */
+[data-page="home"] .pillar { position: relative; overflow: hidden; }
+[data-page="home"] .pillar:nth-child(1) { background: var(--green-800); color: var(--white); }
+[data-page="home"] .pillar:nth-child(1) h3 { color: var(--white); }
+[data-page="home"] .pillar:nth-child(1) p { color: var(--on-dark); }
+[data-page="home"] .pillar:nth-child(1) .pillar__ico { background: var(--lime); color: var(--ink); }
+[data-page="home"] .pillar:nth-child(2) { background: var(--lime); }
+[data-page="home"] .pillar:nth-child(2) h3, [data-page="home"] .pillar:nth-child(2) p { color: var(--ink); }
+[data-page="home"] .pillar:nth-child(2) .pillar__ico { background: var(--green-800); color: var(--lime); }
+[data-page="home"] .pillar:nth-child(3) { background: var(--green-100); }
+[data-page="home"] .pillar:nth-child(3) .pillar__ico { background: var(--green-800); color: var(--white); }
+[data-page="home"] .pillar::after {
+  content: ""; position: absolute; right: -40px; bottom: -40px; width: 120px; height: 120px; border-radius: 50%;
+  background: currentColor; opacity: .08; pointer-events: none;
+}
+
+/* Percorso: fondo verde chiaro tenue, numeri in cerchi */
+[data-page="home"] .path { background: var(--green-100) !important; }
+[data-page="home"] .steps { position: relative; }
+[data-page="home"] .steps li { border-top: 0; box-shadow: 0 10px 24px -18px rgba(29, 58, 32, .5); }
+[data-page="home"] .steps span {
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--green-800); color: var(--lime); font-size: 1.3rem; margin-bottom: 6px;
+}
+[data-page="home"] .steps li:nth-child(even) span { background: var(--lime); color: var(--ink); }
+
+/* Numeri: fascia verde chiaro */
+[data-page="home"] .stats { background: var(--lime); color: var(--ink); }
+[data-page="home"] .stats__grid strong { color: var(--green-900); }
+[data-page="home"] .stats__grid span { color: var(--ink); }
+[data-page="home"] .stats__grid li { padding-left: 18px; border-left: 4px solid var(--green-800); }
+[data-page="home"] .stats__more a { color: var(--ink); }
+
+/* Card donazione */
+[data-page="home"] .impact-card { border-color: var(--green-100); border-top: 6px solid var(--green-800); }
+[data-page="home"] .impact-card--feat { background: var(--lime); border-color: var(--lime); border-top-color: var(--green-800); }
+[data-page="home"] .impact-card--feat .impact-card__desc,
+[data-page="home"] .impact-card--feat .impact-card__cta,
+[data-page="home"] .impact-card--feat .impact-card__amount small { color: var(--ink); }
+[data-page="home"] .impact-card--feat .impact-card__badge { background: var(--green-800); color: var(--white); }
+[data-page="home"] .impact-card:hover { border-color: var(--lime); border-top-color: var(--green-800); }
+
+/* Progetti e iniziative: fascia verde scuro */
+[data-page="home"] .latest { background: var(--green-800); }
+[data-page="home"] .latest h2 { color: var(--white); }
+[data-page="home"] .latest .arrowlink { color: var(--lime-light); }
+[data-page="home"] .latest .icard { border-color: transparent; }
+
+/* Come aiutare */
+[data-page="home"] .ways { background: var(--white); }
+[data-page="home"] .way:not(.way--feat) { background: var(--green-100); }
+[data-page="home"] .way:not(.way--feat) .copybox { background: var(--white); }
+
+/* Chiusura: verde scuro con cerchi verde chiaro */
+[data-page="home"] .final { position: relative; overflow: hidden; background: var(--green-900); }
+[data-page="home"] .final::before, [data-page="home"] .final::after {
+  content: ""; position: absolute; border-radius: 50%; background: var(--lime); pointer-events: none;
+}
+[data-page="home"] .final::before { width: 320px; height: 320px; right: -80px; top: -140px; opacity: .22; }
+[data-page="home"] .final::after { width: 180px; height: 180px; left: -60px; bottom: -90px; opacity: .14; }
+[data-page="home"] .final__in { position: relative; }
