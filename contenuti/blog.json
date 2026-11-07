@@ -1,0 +1,86 @@
+{
+  "_istruzioni": "Per pubblicare un articolo copia un blocco in 'articoli', cambia 'id' (solo minuscole e trattini) e i testi. data: AAAA-MM-GG. 'testo' è un elenco di blocchi: una stringa è un paragrafo; {\"titolo\": \"...\"} è un sottotitolo; {\"elenco\": [\"...\"]} è un elenco puntato; {\"citazione\": \"...\", \"autore\": \"...\"} è una citazione in evidenza. Gli articoli con 'bozza': true non vengono mostrati.",
+  "articoli": [
+    {
+      "id": "giornata-in-comunita",
+      "titolo": "Una giornata in comunità, ora per ora",
+      "sommario": "Sveglia alle 7, lavoro, pasti insieme, la relazione scritta della sera: il ritmo che aiuta a rimettere ordine nella propria vita.",
+      "categoria": "Vita in comunità",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/chi-siamo-lautari-comunita-02.jpg",
+      "data": "2026-11-07",
+      "autore": "Comunità Lautari",
+      "inEvidenza": true,
+      "testo": [
+        "Chi entra in comunità spesso arriva da mesi o anni in cui le giornate non hanno più una forma. Per questo, a Lautari, il primo strumento terapeutico è proprio il tempo: una giornata scandita, uguale per tutti, in cui ognuno sa cosa lo aspetta.",
+        { "titolo": "Dal lunedì al sabato" },
+        "La sveglia suona alle 7:00 e alle 7:30 si fa colazione. Alle 8:00 inizia il lavoro, fino a mezzogiorno. Dopo il pranzo, dalle 12:10 alle 13:30, si torna al lavoro fino alle 17:30.",
+        "Il tardo pomeriggio è dedicato alla doccia e alla relazione scritta, un momento personale in cui mettere su carta la propria giornata. Alle 19:30 si cena e dalle 21:00 alle 23:00 ci sono la riunione di gruppo, lo sport o le attività culturali. Alle 23:00, buonanotte.",
+        { "titolo": "I pasti, un momento per stare insieme" },
+        "A tavola si inizia e si finisce insieme, e prima di ogni pasto si osserva un minuto di silenzio. Sono gesti semplici che insegnano il rispetto dei tempi e degli altri.",
+        { "titolo": "La domenica" },
+        "La domenica la sveglia è alle 8:00. La mattina è dedicata alle pulizie approfondite delle camere e della struttura, il pomeriggio allo sport e alle gite. La sera, attività sportive, culturali o ludiche.",
+        { "citazione": "La vita di gruppo, regolata da norme di convivenza, è il primo passo per riscoprire sé stessi e la relazione con gli altri.", "autore": "Il percorso della Comunità Lautari" },
+        "Gli orari possono cambiare con le stagioni, il lavoro, i colloqui o le riunioni. Ma il principio resta: una giornata ordinata è il terreno su cui si costruisce un nuovo stile di vita."
+      ]
+    },
+    {
+      "id": "lavoro-che-cura",
+      "titolo": "Il lavoro che cura: nove mestieri per ricominciare",
+      "sommario": "Cantina, vigneto, allevamento, falegnameria e non solo. Perché in comunità il lavoro è parte della terapia, e spesso diventa un impiego vero.",
+      "categoria": "Lavoro e reinserimento",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/reinserimento-comunita-lautari-04.jpg",
+      "data": "2026-11-07",
+      "autore": "Comunità Lautari",
+      "inEvidenza": false,
+      "testo": [
+        "In comunità si lavora otto ore al giorno, dal lunedì al sabato. Non è un modo per riempire il tempo: il lavoro sviluppa maturità, autonomia, senso di responsabilità e la soddisfazione di vedere il risultato del proprio impegno.",
+        { "titolo": "Nove attività" },
+        { "elenco": ["La cantina, il vigneto e l'allevamento, con la cooperativa Eno Caccia", "La falegnameria e il restauro, con la Cooperativa Insieme Onlus", "L'autofficina, il cantiere edile, la cucina e la lavanderia, gestiti in comunità"] },
+        "Gran parte delle attività si svolge alla Tenuta Borgo la Caccia, a Pozzolengo: 90 ettari, di cui 30 di vigneti, sulle colline moreniche a ridosso del Lago di Garda.",
+        { "titolo": "Imparare un mestiere" },
+        "I ragazzi sono affiancati dai maestri del lavoro e seguono corsi di formazione. Il lavoro è anche la principale fonte di autofinanziamento della comunità, ed è uno dei motivi per cui il percorso può restare gratuito.",
+        { "titolo": "Dopo il percorso" },
+        "Agli ex ospiti viene data l'opportunità di reinserirsi professionalmente nelle nostre cooperative di lavoro. Per almeno sei mesi dopo la fine del programma li seguiamo con un monitoraggio mensile."
+      ]
+    },
+    {
+      "id": "famiglia-nel-percorso",
+      "titolo": "Quando a stare male è un figlio: la famiglia nel percorso",
+      "sommario": "Ricostruire un rapporto sano con la famiglia è uno dei fattori più importanti per la riuscita del percorso. Ecco come coinvolgiamo i familiari.",
+      "categoria": "Famiglie",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/vita-in-comunita-lautari-01.jpg",
+      "data": "2026-11-07",
+      "autore": "Comunità Lautari",
+      "inEvidenza": false,
+      "testo": [
+        "La dipendenza non riguarda mai una sola persona. Quando un figlio, un fratello o un compagno entra in comunità, anche la famiglia inizia un cammino. Per questo la famiglia ricopre, nel nostro percorso, un ruolo di fondamentale importanza.",
+        { "titolo": "Gli incontri" },
+        "Coinvolgiamo i familiari in tre modi: incontri tra ospiti e famiglie, gruppi di famiglie seguiti dallo psicologo o dagli educatori e interventi formativi.",
+        { "titolo": "Restare in contatto" },
+        "Una volta al mese, il lunedì o il venerdì dalle 20:00 alle 21:00, i familiari possono telefonare per avere informazioni e parlare direttamente con il proprio caro, secondo il suo percorso individuale.",
+        { "titolo": "Cosa chiediamo alle famiglie" },
+        { "elenco": ["Collaborare con la comunità nel far rispettare le regole", "Partecipare alle iniziative proposte", "Non portare oggetti senza autorizzazione", "Non dare nulla direttamente al proprio caro, se non concordato con lo staff"] },
+        "Sono regole che a volte costano fatica, ma proteggono il percorso. Se hai un familiare in difficoltà e non sai da dove cominciare, chiamaci al 030 991 8700: ti ascoltiamo e ti spieghiamo come iniziare."
+      ]
+    },
+    {
+      "id": "5x1000-come-fare",
+      "titolo": "Il 5×1000 alla Comunità Lautari: come si fa in 3 passi",
+      "sommario": "Non costa nulla e vale moltissimo. Basta una firma e il nostro codice fiscale nella dichiarazione dei redditi.",
+      "categoria": "Sostienici",
+      "immagine": "https://www.lautari.it/wp-content/uploads/2018/09/reinserimento-comunita-lautari-02.jpg",
+      "data": "2026-11-07",
+      "autore": "Comunità Lautari",
+      "inEvidenza": false,
+      "donazione": true,
+      "testo": [
+        "Il 5×1000 è una quota delle imposte che lo Stato destina, su tua scelta, a un'organizzazione non profit. Non è una tassa in più e non costa nulla: se non scegli, quella quota resta comunque allo Stato.",
+        { "titolo": "Come si fa" },
+        { "elenco": ["Nel modello 730, nella Certificazione Unica o nel modello Redditi trova il riquadro per la scelta del cinque per mille", "Firma nella casella dedicata al sostegno del volontariato e delle altre organizzazioni non lucrative di utilità sociale", "Scrivi sotto la firma il nostro codice fiscale: 01702160985"] },
+        { "titolo": "Perché è importante" },
+        "La permanenza in comunità è completamente gratuita: non chiediamo rette alle famiglie né al Servizio Sanitario. Ogni contributo, anche quello che non ti costa nulla, ci aiuta a tenere la porta aperta.",
+        "Puoi anche passare parola: consiglia il nostro codice fiscale al tuo commercialista, al CAF o a chi ti aiuta con la dichiarazione."
+      ]
+    }
+  ]
+}
