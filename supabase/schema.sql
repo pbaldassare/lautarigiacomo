@@ -2,29 +2,38 @@
 -- Comunità Lautari · area riservata
 -- Progetti, iniziative, eventi e collaborazioni modificabili dai collaboratori.
 --
+-- Tutti i nomi hanno il prefisso lautari_ (e lo spazio foto si chiama
+-- lautari-immagini) perché il progetto Supabase è condiviso con altre app.
+--
 -- Chi può fare cosa:
 --   * chiunque (anche senza login) legge solo i contenuti pubblicati;
 --   * possono scrivere SOLO gli utenti la cui email è nella tabella
---     public.collaboratori: un account creato da altri non può modificare nulla.
+--     public.lautari_collaboratori: un account creato da altri, anche di
+--     altre app dello stesso progetto, non può modificare nulla.
 -- =====================================================================
 
 -- ---------- Collaboratori abilitati ----------
-create table if not exists public.collaboratori (
+create table if not exists public.lautari_collaboratori (
   email      text primary key check (email = lower(email)),
   nome       text,
   ruolo      text not null default 'editor' check (ruolo in ('editor', 'admin')),
   creato_il  timestamptz not null default now()
 );
 
-alter table public.collaboratori enable row level security;
+alter table public.lautari_collaboratori enable row level security;
 
-drop policy if exists "Un collaboratore vede il proprio profilo" on public.collaboratori;
+drop policy if exists "Un collaboratore vede il proprio profilo" on public.lautari_collaboratori;
 create policy "Un collaboratore vede il proprio profilo"
-  on public.collaboratori for select to authenticated
+  on public.lautari_collaboratori for select to authenticated
   using (email = lower(auth.jwt() ->> 'email'));
 
--- true se l'utente collegato è un collaboratore abilitato
-create or replace function public.is_collaboratore()
+-- true se l'utente collegato è un collaboratore abilitato.
+-- Sta in uno schema privato, non raggiungibile dalle API pubbliche.
+create schema if not exists lautari_private;
+revoke all on schema lautari_private from public;
+grant usage on schema lautari_private to anon, authenticated;
+
+create or replace function lautari_private.is_collaboratore()
 returns boolean
 language sql
 stable
@@ -32,16 +41,16 @@ security definer
 set search_path = ''
 as $$
   select exists (
-    select 1 from public.collaboratori c
+    select 1 from public.lautari_collaboratori c
     where c.email = lower(coalesce(auth.jwt() ->> 'email', ''))
   );
 $$;
 
-revoke all on function public.is_collaboratore() from public;
-grant execute on function public.is_collaboratore() to anon, authenticated;
+revoke all on function lautari_private.is_collaboratore() from public;
+grant execute on function lautari_private.is_collaboratore() to anon, authenticated;
 
 -- ---------- Contenuti ----------
-create table if not exists public.iniziative (
+create table if not exists public.lautari_iniziative (
   id             text primary key check (id ~ '^[a-z0-9]+(-[a-z0-9]+)*$' and char_length(id) <= 80),
   tipo           text not null check (tipo in ('progetto', 'iniziativa', 'evento', 'collaborazione')),
   titolo         text not null check (char_length(titolo) between 3 and 160),
@@ -63,33 +72,33 @@ create table if not exists public.iniziative (
   aggiornato_il  timestamptz not null default now()
 );
 
-create index if not exists iniziative_pubblicato_data on public.iniziative (pubblicato, data desc);
+create index if not exists lautari_iniziative_pubblicato_data on public.lautari_iniziative (pubblicato, data desc);
 
-alter table public.iniziative enable row level security;
+alter table public.lautari_iniziative enable row level security;
 
-drop policy if exists "Tutti leggono i contenuti pubblicati" on public.iniziative;
+drop policy if exists "Tutti leggono i contenuti pubblicati" on public.lautari_iniziative;
 create policy "Tutti leggono i contenuti pubblicati"
-  on public.iniziative for select to anon, authenticated
-  using (pubblicato or (select public.is_collaboratore()));
+  on public.lautari_iniziative for select to anon, authenticated
+  using (pubblicato or (select lautari_private.is_collaboratore()));
 
-drop policy if exists "I collaboratori aggiungono contenuti" on public.iniziative;
+drop policy if exists "I collaboratori aggiungono contenuti" on public.lautari_iniziative;
 create policy "I collaboratori aggiungono contenuti"
-  on public.iniziative for insert to authenticated
-  with check ((select public.is_collaboratore()));
+  on public.lautari_iniziative for insert to authenticated
+  with check ((select lautari_private.is_collaboratore()));
 
-drop policy if exists "I collaboratori modificano contenuti" on public.iniziative;
+drop policy if exists "I collaboratori modificano contenuti" on public.lautari_iniziative;
 create policy "I collaboratori modificano contenuti"
-  on public.iniziative for update to authenticated
-  using ((select public.is_collaboratore()))
-  with check ((select public.is_collaboratore()));
+  on public.lautari_iniziative for update to authenticated
+  using ((select lautari_private.is_collaboratore()))
+  with check ((select lautari_private.is_collaboratore()));
 
-drop policy if exists "I collaboratori eliminano contenuti" on public.iniziative;
+drop policy if exists "I collaboratori eliminano contenuti" on public.lautari_iniziative;
 create policy "I collaboratori eliminano contenuti"
-  on public.iniziative for delete to authenticated
-  using ((select public.is_collaboratore()));
+  on public.lautari_iniziative for delete to authenticated
+  using ((select lautari_private.is_collaboratore()));
 
 -- aggiorna automaticamente chi e quando ha modificato
-create or replace function public.iniziative_aggiornata()
+create or replace function public.lautari_iniziative_aggiornata()
 returns trigger
 language plpgsql
 set search_path = ''
@@ -101,30 +110,30 @@ begin
 end;
 $$;
 
-drop trigger if exists iniziative_aggiornata on public.iniziative;
-create trigger iniziative_aggiornata
-  before update on public.iniziative
-  for each row execute function public.iniziative_aggiornata();
+drop trigger if exists lautari_iniziative_aggiornata on public.lautari_iniziative;
+create trigger lautari_iniziative_aggiornata
+  before update on public.lautari_iniziative
+  for each row execute function public.lautari_iniziative_aggiornata();
 
 -- ---------- Immagini ----------
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-values ('immagini', 'immagini', true, 5242880, array['image/jpeg', 'image/png', 'image/webp'])
+values ('lautari-immagini', 'lautari-immagini', true, 5242880, array['image/jpeg', 'image/png', 'image/webp'])
 on conflict (id) do update
   set public = excluded.public,
       file_size_limit = excluded.file_size_limit,
       allowed_mime_types = excluded.allowed_mime_types;
 
-drop policy if exists "I collaboratori caricano immagini" on storage.objects;
-create policy "I collaboratori caricano immagini"
+drop policy if exists "Lautari: i collaboratori caricano immagini" on storage.objects;
+create policy "Lautari: i collaboratori caricano immagini"
   on storage.objects for insert to authenticated
-  with check (bucket_id = 'immagini' and (select public.is_collaboratore()));
+  with check (bucket_id = 'lautari-immagini' and (select lautari_private.is_collaboratore()));
 
-drop policy if exists "I collaboratori sostituiscono immagini" on storage.objects;
-create policy "I collaboratori sostituiscono immagini"
+drop policy if exists "Lautari: i collaboratori sostituiscono immagini" on storage.objects;
+create policy "Lautari: i collaboratori sostituiscono immagini"
   on storage.objects for update to authenticated
-  using (bucket_id = 'immagini' and (select public.is_collaboratore()));
+  using (bucket_id = 'lautari-immagini' and (select lautari_private.is_collaboratore()));
 
-drop policy if exists "I collaboratori eliminano immagini" on storage.objects;
-create policy "I collaboratori eliminano immagini"
+drop policy if exists "Lautari: i collaboratori eliminano immagini" on storage.objects;
+create policy "Lautari: i collaboratori eliminano immagini"
   on storage.objects for delete to authenticated
-  using (bucket_id = 'immagini' and (select public.is_collaboratore()));
+  using (bucket_id = 'lautari-immagini' and (select lautari_private.is_collaboratore()));

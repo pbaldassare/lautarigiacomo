@@ -1,6 +1,6 @@
 /*
  * Area riservata: accesso dei collaboratori e gestione di progetti,
- * iniziative, eventi e collaborazioni (tabella public.iniziative su Supabase).
+ * iniziative, eventi e collaborazioni (tabella public.lautari_iniziative su Supabase).
  * I permessi veri sono nel database (supabase/schema.sql): questa pagina
  * mostra o nasconde le funzioni, ma non è lei a proteggere i dati.
  */
@@ -13,6 +13,9 @@
     String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
   const DB = window.LAUTARI_DB || {};
+  const T_CONTENUTI = DB.tabellaContenuti || "lautari_iniziative";
+  const T_COLLAB = DB.tabellaCollaboratori || "lautari_collaboratori";
+  const BUCKET = DB.bucketImmagini || "lautari-immagini";
   const TIPI = { evento: "Evento", progetto: "Progetto", iniziativa: "Iniziativa", collaborazione: "Collaborazione" };
   const VISTE = ["config", "login", "password", "negato", "pannello", "editor"];
 
@@ -121,7 +124,7 @@
     utente = data.user;
     if (!utente) return mostra("login");
     const email = (utente.email || "").toLowerCase();
-    const { data: righe, error } = await sb.from("collaboratori").select("email, nome, ruolo").eq("email", email).limit(1);
+    const { data: righe, error } = await sb.from(T_COLLAB).select("email, nome, ruolo").eq("email", email).limit(1);
     profilo = !error && righe && righe[0];
     if (!profilo) {
       $("#negato-email").textContent = email;
@@ -296,7 +299,7 @@
     $("#form-editor").reset();
     let c = { tipo: "evento", pubblicato: true, testo: [] };
     if (id) {
-      const { data, error } = await sb.from("iniziative").select("*").eq("id", id).single();
+      const { data, error } = await sb.from(T_CONTENUTI).select("*").eq("id", id).single();
       if (error || !data) return alert("Impossibile aprire questo contenuto.");
       c = data;
     }
@@ -340,10 +343,10 @@
     const ext = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" }[file.type];
     const nome = `iniziative/${Date.now()}-${slug($("#f-titolo").value) || "foto"}.${ext}`;
     messaggio(msg, "Caricamento della foto…", "info");
-    const { error } = await sb.storage.from("immagini").upload(nome, file, { contentType: file.type, upsert: false });
+    const { error } = await sb.storage.from(BUCKET).upload(nome, file, { contentType: file.type, upsert: false });
     e.target.value = "";
     if (error) return messaggio(msg, "Caricamento non riuscito. Riprova.");
-    const { data } = sb.storage.from("immagini").getPublicUrl(nome);
+    const { data } = sb.storage.from(BUCKET).getPublicUrl(nome);
     $("#f-immagine").value = data.publicUrl;
     anteprima(data.publicUrl);
     messaggio(msg, "Foto caricata. Ricordati di salvare.", "ok");
@@ -389,8 +392,8 @@
     btn.disabled = true;
     btn.textContent = "Salvataggio…";
     const { error } = inModifica
-      ? await sb.from("iniziative").update(riga).eq("id", inModifica)
-      : await sb.from("iniziative").insert(riga);
+      ? await sb.from(T_CONTENUTI).update(riga).eq("id", inModifica)
+      : await sb.from(T_CONTENUTI).insert(riga);
     btn.disabled = false;
     btn.textContent = "Salva";
 
@@ -413,7 +416,7 @@
     if (!inModifica) return;
     const titolo = $("#f-titolo").value.trim();
     if (!confirm(`Eliminare definitivamente «${titolo}»? Sparirà dal sito e non si potrà recuperare.\n\nSe vuoi solo nasconderlo, togli la spunta «Pubblicato sul sito» e salva.`)) return;
-    const { error } = await sb.from("iniziative").delete().eq("id", inModifica);
+    const { error } = await sb.from(T_CONTENUTI).delete().eq("id", inModifica);
     if (error) return messaggio($("#editor-msg"), "Eliminazione non riuscita.");
     await caricaElenco();
     mostra("pannello");

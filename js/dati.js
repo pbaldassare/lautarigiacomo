@@ -32,7 +32,7 @@
   }
 
   async function dalDatabase() {
-    const url = `${DB.url.replace(/\/$/, "")}/rest/v1/iniziative?select=*&pubblicato=eq.true&order=data.desc.nullslast`;
+    const url = `${DB.url.replace(/\/$/, "")}/rest/v1/${DB.tabellaContenuti || "lautari_iniziative"}?select=*&pubblicato=eq.true&order=data.desc.nullslast`;
     const r = await fetch(url, { headers: { apikey: DB.anonKey, Authorization: `Bearer ${DB.anonKey}` } });
     if (!r.ok) throw new Error("Database non disponibile");
     return (await r.json()).map(daRiga);

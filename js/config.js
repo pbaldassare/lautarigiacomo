@@ -41,6 +41,11 @@ window.DONAZIONI = {
  * Se restano vuoti, il sito usa i contenuti del file contenuti/iniziative.json.
  */
 window.LAUTARI_DB = {
-  url: "",
-  anonKey: ""
+  // Progetto Supabase "labpiattaforma" (condiviso, tabelle con prefisso lautari_)
+  url: "https://gdeyyyirgriwknkcqcwl.supabase.co",
+  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdkZXl5eWlyZ3Jpd2tua2NxY3dsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA2NzUxOTUsImV4cCI6MjEwNjI1MTE5NX0.9Ymve0cI_Tnmq9AioEnIkGNfHLJJ6BUpzZco-AOwqcE",
+  // Nomi usati nel database (il progetto Supabase è condiviso con altre app)
+  tabellaContenuti: "lautari_iniziative",
+  tabellaCollaboratori: "lautari_collaboratori",
+  bucketImmagini: "lautari-immagini"
 };

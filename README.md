@@ -112,20 +112,21 @@ Campagne ed eventi stanno in `contenuti/iniziative.json` (tipo `evento` o `inizi
 
 L'icona con l'omino (in alto nella barra laterale, o in alto a destra su telefono) porta ad `area-riservata.html`. I collaboratori entrano con email e password e possono aggiungere, modificare, mettere in bozza o eliminare progetti, iniziative, eventi e collaborazioni, con foto. Quello che pubblicano compare subito sul sito.
 
-Funziona con [Supabase](https://supabase.com) (login, database e foto):
+Funziona con [Supabase](https://supabase.com) (login, database e foto), nel progetto **labpiattaforma** (`gdeyyyirgriwknkcqcwl`, Irlanda), condiviso con un'altra app. Per non toccare nulla di quell'app, tutto ciò che riguarda Lautari ha il prefisso `lautari_`: tabelle `lautari_iniziative` e `lautari_collaboratori`, schema privato `lautari_private`, spazio foto `lautari-immagini`.
 
-- `supabase/schema.sql`: tabelle, permessi e spazio per le foto. Solo le email presenti nella tabella `collaboratori` possono modificare; tutti gli altri possono solo leggere i contenuti pubblicati.
-- `supabase/seed.sql`: carica nel database i contenuti attuali di `contenuti/iniziative.json`.
-- `js/config.js` → `LAUTARI_DB`: indirizzo e chiave pubblica del progetto. Se sono vuoti, il sito usa il file `contenuti/iniziative.json` come prima.
+- `supabase/schema.sql`: tabelle, permessi e spazio foto. Solo le email presenti in `lautari_collaboratori` possono modificare; tutti gli altri, compresi gli utenti dell'altra app, possono solo leggere i contenuti pubblicati.
+- `supabase/seed.sql`: i contenuti iniziali (già caricati).
+- `js/config.js` → `LAUTARI_DB`: indirizzo e chiave pubblica del progetto. Se il database non risponde, il sito usa `contenuti/iniziative.json`.
 
 ### Aggiungere un collaboratore
 
-1. Supabase → Authentication → Users → **Invite user**, con l'email del collaboratore: riceve un'email, clicca il link e imposta la sua password.
-2. Supabase → Table Editor → tabella `collaboratori` → **Insert row** con la stessa email (in minuscolo) e il nome.
+1. Supabase → progetto labpiattaforma → Authentication → Users → **Invite user**, con l'email del collaboratore: riceve un'email, clicca il link e imposta la sua password.
+2. Table Editor → tabella `lautari_collaboratori` → **Insert row** con la stessa email (in minuscolo) e il nome.
 
-Per togliere l'accesso basta eliminare la riga dalla tabella `collaboratori`.
+Per togliere l'accesso basta eliminare la riga da `lautari_collaboratori`.
 
-### Impostazioni da fare una volta in Supabase
+### Impostazioni in Supabase
 
-- Authentication → Sign In / Providers: disattiva **Allow new users to sign up** (gli account li crea solo la comunità).
-- Authentication → URL Configuration: imposta come **Site URL** l'indirizzo del sito e aggiungi `…/area-riservata.html` tra i **Redirect URLs** (servono per i link di invito e di recupero password).
+- Authentication → URL Configuration → **Redirect URLs**: aggiungi l'indirizzo di `area-riservata.html` del sito pubblicato (serve per i link di invito e di recupero password). **Non cambiare la Site URL**: appartiene all'altra app.
+- Non disattivare le registrazioni ("Allow new users to sign up"): l'impostazione vale anche per l'altra app. Non serve: un account nuovo non può modificare nulla se non è in `lautari_collaboratori`.
+- Le email di invito e di recupero usano i modelli del progetto, condivisi con l'altra app.
