@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sostienici · Comunità Lautari</title>
+  <meta name="description" content="Con 40 € sostieni la giornata di un ragazzo in comunità. Dona con bonifico o bollettino, ogni mese o una volta, oppure con il 5×1000: codice fiscale 01702160985.">
+  <meta name="theme-color" content="#336739">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="sostienici">
+  <script src="js/layout.js"></script>
+
+  <main id="contenuto">
+
+    <!-- HERO con donazione rapida -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="wrap hero__in">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--light">Sostienici</p>
+          <h1>Non devi aiutarli tutti. <em>Ne basta uno.</em></h1>
+          <p class="hero__lead">Il percorso in comunità è gratuito per chi entra. Esiste grazie al lavoro dei ragazzi e a persone come te.</p>
+          <ul class="hero__facts">
+            <li><strong>40 €</strong> = una giornata</li>
+            <li><strong>2 minuti</strong> per donare</li>
+            <li><strong>Deducibile</strong> dalle tasse</li>
+          </ul>
+        </div>
+
+        <form class="quick" id="quick" aria-labelledby="quick-title">
+          <p class="quick__kicker"><svg class="ico"><use href="#i-heart"/></svg> Dona ora</p>
+          <h2 id="quick-title">Con <span data-costo>40</span> € sostieni la giornata di un ragazzo in comunità</h2>
+          <fieldset class="chips" id="quick-chips">
+            <legend class="sr-only">Scegli l'importo</legend>
+          </fieldset>
+          <p class="quick__impact" id="quick-impact" aria-live="polite"></p>
+          <button class="btn btn--dona btn--xl btn--block" type="submit">
+            <svg class="ico"><use href="#i-heart"/></svg> Dona <span id="quick-amount">40</span> €
+          </button>
+          <p class="quick__note">Bonifico o bollettino, una volta o ogni mese. Ti diamo i dati già pronti da copiare.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- IMPATTO -->
+    <section class="impact" aria-labelledby="impact-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Cosa rende possibile il tuo dono</p>
+          <h2 id="impact-title">Ogni giornata conta</h2>
+        </div>
+        <div class="impact__grid">
+          <button class="impact-card" data-dona data-importo="40">
+            <span class="impact-card__amount">40 €</span>
+            <span class="impact-card__what">Una giornata</span>
+            <span class="impact-card__desc">Vitto, alloggio, lavoro e sostegno terapeutico per un ragazzo, per un giorno intero.</span>
+            <span class="impact-card__cta">Dona 40 € <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </button>
+          <button class="impact-card impact-card--feat" data-dona data-importo="280">
+            <span class="impact-card__badge">Più impatto</span>
+            <span class="impact-card__amount">280 €</span>
+            <span class="impact-card__what">Una settimana</span>
+            <span class="impact-card__desc">Sette giorni di percorso: il tempo in cui si costruiscono abitudini nuove.</span>
+            <span class="impact-card__cta">Dona 280 € <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </button>
+          <button class="impact-card" data-dona data-importo="40" data-frequenza="mensile">
+            <span class="impact-card__amount">40 € <small>/ mese</small></span>
+            <span class="impact-card__what">Un sostegno costante</span>
+            <span class="impact-card__desc">Con un bonifico periodico garantisci una giornata in comunità ogni mese.</span>
+            <span class="impact-card__cta">Dona ogni mese <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGETTI -->
+    <section aria-labelledby="progetti-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Dona a un progetto</p>
+          <h2 id="progetti-title">Scegli cosa sostenere</h2>
+          <p>Indichiamo il progetto nella causale, così la tua donazione va dove hai scelto.</p>
+        </div>
+        <div class="pickers">
+          <button class="picker" data-dona data-progetto="drug-zero">
+            <img src="https://www.lautari.it/wp-content/uploads/2018/10/formazione-e-prevenzione-lautari.jpg" alt="" loading="lazy">
+            <span><strong>Drug Zero</strong>Prevenzione nelle scuole</span>
+            <svg class="ico"><use href="#i-heart"/></svg>
+          </button>
+          <button class="picker" data-dona data-progetto="salvagente">
+            <img src="https://www.lautari.it/wp-content/uploads/2018/09/il-percorso-in-comunita-02.jpg" alt="" loading="lazy">
+            <span><strong>Salvagente</strong>Accoglienza di chi è in difficoltà</span>
+            <svg class="ico"><use href="#i-heart"/></svg>
+          </button>
+          <button class="picker" data-dona data-progetto="grest">
+            <img src="https://www.lautari.it/wp-content/uploads/2018/10/sport-vita-in-comunita-02.jpg" alt="" loading="lazy">
+            <span><strong>Grest</strong>Prevenzione nei centri estivi</span>
+            <svg class="ico"><use href="#i-heart"/></svg>
+          </button>
+          <button class="picker" data-dona data-progetto="prevenzione">
+            <img src="https://www.lautari.it/wp-content/uploads/2018/09/vita-in-comunita-lautari-02.jpg" alt="" loading="lazy">
+            <span><strong>Prevenzione e informazione</strong>Le testimonianze dei ragazzi</span>
+            <svg class="ico"><use href="#i-heart"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODI DI DONARE -->
+    <section class="ways" id="come-donare" aria-labelledby="ways-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Come donare</p>
+          <h2 id="ways-title">Tre modi, anche senza spendere</h2>
+        </div>
+        <div class="ways__grid">
+          <div class="way way--feat">
+            <h3>5×1000</h3>
+            <p>Non costa nulla. Nella dichiarazione dei redditi (730, CU, Redditi PF) firma nel riquadro delle organizzazioni non lucrative e scrivi il nostro codice fiscale.</p>
+            <div class="copybox">
+              <span class="copybox__label">Codice fiscale</span>
+              <code class="copybox__value">01702160985</code>
+              <button class="copybtn" data-copy="cf" aria-label="Copia il codice fiscale"><svg class="ico"><use href="#i-copy"/></svg><span>Copia</span></button>
+            </div>
+          </div>
+          <div class="way">
+            <h3>Bonifico bancario</h3>
+            <p>Una volta o ogni mese, impostando un bonifico periodico dal tuo home banking.</p>
+            <div class="copybox">
+              <span class="copybox__label">IBAN</span>
+              <code class="copybox__value" data-iban-fmt></code>
+              <button class="copybtn" data-copy="iban" aria-label="Copia l'IBAN"><svg class="ico"><use href="#i-copy"/></svg><span>Copia</span></button>
+            </div>
+            <button class="btn btn--dona btn--block" data-dona data-metodo="bonifico"><svg class="ico"><use href="#i-heart"/></svg> Dona con bonifico</button>
+          </div>
+          <div class="way">
+            <h3>Bollettino postale</h3>
+            <p>In qualsiasi ufficio postale o dall'app di Poste Italiane.</p>
+            <div class="copybox">
+              <span class="copybox__label">Conto corrente postale</span>
+              <code class="copybox__value">000012850251</code>
+              <button class="copybtn" data-copy="ccp" aria-label="Copia il numero di conto corrente postale"><svg class="ico"><use href="#i-copy"/></svg><span>Copia</span></button>
+            </div>
+            <button class="btn btn--dona btn--block" data-dona data-metodo="bollettino"><svg class="ico"><use href="#i-heart"/></svg> Dona con bollettino</button>
+          </div>
+        </div>
+        <details class="tax">
+          <summary>Agevolazioni fiscali: come detrarre o dedurre la tua donazione</summary>
+          <div class="tax__body">
+            <p>Le donazioni alla Cooperativa (ONLUS) sono deducibili o detraibili dalle imposte nei limiti previsti dalla legge, sia per i privati sia per le imprese.</p>
+            <ul>
+              <li>Conserva la ricevuta del bollettino, la contabile del bonifico o l'estratto conto.</li>
+              <li>Le donazioni in contanti non danno diritto alle agevolazioni.</li>
+              <li>Per ricevere la ricevuta della Cooperativa scrivi a <a href="mailto:segreteria@lautari.it">segreteria@lautari.it</a> indicando nome, cognome e codice fiscale.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- FIDUCIA -->
+    <section aria-labelledby="trust-title">
+      <div class="wrap split">
+        <div class="split__text">
+          <p class="eyebrow">Trasparenza</p>
+          <h2 id="trust-title">Sai sempre come usiamo il tuo dono</h2>
+          <p>Siamo una Cooperativa Sociale ONLUS iscritta all'Albo Nazionale delle Società Cooperative (n. A107298) e autorizzata dalla Regione Lombardia dal 1993. Pubblichiamo il bilancio e il bilancio sociale.</p>
+          <div class="docs docs--stack">
+            <a class="doc" href="https://www.lautari.it/wp-content/uploads/2024/02/BILANCIO-SOCIALE-COOP-LAUTARI-2022.pdf" target="_blank" rel="noopener"><svg class="ico"><use href="#i-doc"/></svg><span><strong>Bilancio sociale 2022</strong>PDF</span></a>
+            <a class="doc" href="https://www.lautari.it/wp-content/uploads/2024/02/BILANCIO-E-NOTA-INTEGRATIVA-2022-COOP-LAUTARI.pdf" target="_blank" rel="noopener"><svg class="ico"><use href="#i-doc"/></svg><span><strong>Bilancio e nota integrativa 2022</strong>PDF</span></a>
+          </div>
+        </div>
+        <figure class="split__img"><img src="https://www.lautari.it/wp-content/uploads/2018/09/reinserimento-comunita-lautari-05.jpg" alt="Ragazzi della comunità al lavoro" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- AZIENDE -->
+    <section class="collab">
+      <div class="wrap collab__in">
+        <div>
+          <h2>Sei un'azienda, una scuola o un'associazione?</h2>
+          <p>Possiamo costruire insieme una collaborazione, un evento o una raccolta fondi. Scrivici.</p>
+        </div>
+        <div class="collab__actions">
+          <a class="btn btn--ghost" href="mailto:info@lautari.it"><svg class="ico"><use href="#i-mail"/></svg> info@lautari.it</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -374,24 +374,40 @@
     })
   );
 
-  /* ---------- Menu mobile ---------- */
+  /* ---------- Barra laterale (su mobile e tablet si apre come pannello) ---------- */
   const toggle = $(".menu-toggle");
-  const nav = $("#nav");
-  function closeMenu() {
-    nav.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
+  const sidebar = $("#sidebar");
+  const overlay = $(".sidebar-overlay");
+  function openMenu() {
+    sidebar.classList.add("is-open");
+    overlay.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+    document.documentElement.classList.add("is-menu");
+    $(".sidebar__link", sidebar)?.focus();
   }
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(open));
+  function closeMenu() {
+    if (!sidebar.classList.contains("is-open")) return;
+    sidebar.classList.remove("is-open");
+    overlay.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("is-menu");
+  }
+  toggle.addEventListener("click", openMenu);
+  $(".sidebar__close").addEventListener("click", () => {
+    closeMenu();
+    toggle.focus();
   });
-  nav.addEventListener("click", (e) => {
+  overlay.addEventListener("click", closeMenu);
+  sidebar.addEventListener("click", (e) => {
     if (e.target.closest("a")) closeMenu();
   });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
 
-  /* Ombra header allo scroll */
-  const header = $(".header");
-  const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+  /* Ombra della barra in alto allo scroll (mobile e tablet) */
+  const topbar = $(".topbar");
+  const onScroll = () => topbar.classList.toggle("is-scrolled", window.scrollY > 8);
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 })();

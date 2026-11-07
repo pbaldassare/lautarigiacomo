@@ -7,13 +7,19 @@
 (() => {
   "use strict";
 
+  // Le 7 voci della barra laterale
   const NAV = [
-    { href: "chi-siamo.html", label: "Chi siamo", page: "chi-siamo" },
-    { href: "percorso.html", label: "Il percorso", page: "percorso" },
-    { href: "cosa-facciamo.html", label: "Cosa facciamo", page: "cosa-facciamo" },
-    { href: "progetti.html", label: "Progetti e iniziative", page: "progetti" },
-    { href: "contatti.html", label: "Contatti", page: "contatti" }
+    { href: "aiuto.html", label: "Chiedi aiuto", page: "aiuto", icon: "i-life" },
+    { href: "percorso.html", label: "Il percorso", page: "percorso", icon: "i-route" },
+    { href: "chi-siamo.html", label: "Chi siamo", page: "chi-siamo", icon: "i-users" },
+    { href: "progetti.html", label: "Progetti", page: "progetti", icon: "i-grid" },
+    { href: "sedi.html", label: "Sedi", page: "sedi", icon: "i-pin" },
+    { href: "faq.html", label: "FAQ", page: "faq", icon: "i-question" },
+    { href: "sostienici.html", label: "Sostienici", page: "sostienici", icon: "i-heart", extra: " sidebar__link--support" }
   ];
+
+  // Pagine raggiungibili dal footer ma non dalla barra
+  const EXTRA = [{ href: "cosa-facciamo.html", label: "Cosa facciamo" }];
 
   const page = document.body.dataset.page || "";
 
@@ -36,39 +42,48 @@
     <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></g></symbol>
     <symbol id="i-tool" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
+    <symbol id="i-life" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M4.9 4.9l4.3 4.3M14.8 14.8l4.3 4.3M14.8 9.2l4.3-4.3M4.9 19.1l4.3-4.3"/></g></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/></g></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></g></symbol>
+    <symbol id="i-question" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></g></symbol>
   </svg>`;
 
   const top = `
   <a class="skip" href="#contenuto">Vai al contenuto</a>
   ${sprite}
-  <div class="helpbar">
-    <div class="wrap helpbar__in">
-      <a class="helpbar__help" href="contatti.html#aiuto">
-        <span class="helpbar__long">Hai bisogno di aiuto per te o per un tuo caro?</span>
-        <span class="helpbar__short">Hai bisogno di aiuto?</span>
-      </a>
-      <a href="tel:+390309918700"><svg class="ico"><use href="#i-phone"/></svg> 030 991 8700</a>
-    </div>
-  </div>
-  <header class="header" id="top">
-    <div class="wrap header__in">
+  <header class="topbar">
+    <div class="topbar__in">
       <a class="brand" href="index.html" aria-label="Comunità Lautari, home">
         <span class="brand__mark"><svg class="ico"><use href="#i-heart"/></svg></span>
         <span class="brand__text">Comunità <strong>Lautari</strong></span>
       </a>
-      <nav class="nav" id="nav" aria-label="Principale">
-        ${NAV.map(
-          (n) => `<a href="${n.href}"${n.page === page ? ' aria-current="page"' : ""}>${n.label}</a>`
-        ).join("")}
-      </nav>
-      <button class="btn btn--dona header__dona" data-dona>
-        <svg class="ico"><use href="#i-heart"/></svg> Dona ora
-      </button>
-      <button class="menu-toggle" aria-controls="nav" aria-expanded="false" aria-label="Apri il menu">
+      <button class="btn btn--dona topbar__dona" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
+      <button class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Apri il menu">
         <svg class="ico"><use href="#i-menu"/></svg>
       </button>
     </div>
-  </header>`;
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Menu principale">
+    <div class="sidebar__top">
+      <a class="brand brand--side" href="index.html" aria-label="Comunità Lautari, home">
+        <span class="brand__mark"><svg class="ico"><use href="#i-heart"/></svg></span>
+        <span class="brand__text">Comunità <strong>Lautari</strong></span>
+      </a>
+      <button class="sidebar__close" aria-label="Chiudi il menu"><svg class="ico"><use href="#i-close"/></svg></button>
+    </div>
+    <nav class="sidebar__nav" aria-label="Principale">
+      ${NAV.map(
+        (n) => `<a class="sidebar__link${n.extra || ""}" href="${n.href}"${n.page === page ? ' aria-current="page"' : ""}>
+          <svg class="ico"><use href="#${n.icon}"/></svg><span>${n.label}</span></a>`
+      ).join("")}
+    </nav>
+    <div class="sidebar__bottom">
+      <button class="btn btn--dona btn--block" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
+      <a class="sidebar__tel" href="tel:+390309918700"><svg class="ico"><use href="#i-phone"/></svg> 030 991 8700</a>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" hidden></div>`;
 
   const bottom = `
   <footer class="footer">
@@ -79,7 +94,7 @@
       </div>
       <nav class="footer__nav" aria-label="Pagine">
         <a href="index.html">Home</a>
-        ${NAV.map((n) => `<a href="${n.href}">${n.label}</a>`).join("")}
+        ${[...NAV, ...EXTRA].map((n) => `<a href="${n.href}">${n.label}</a>`).join("")}
       </nav>
       <div class="footer__links">
         <a href="chi-siamo.html#trasparenza">Amministrazione trasparente</a>

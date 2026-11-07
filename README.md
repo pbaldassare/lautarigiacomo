@@ -22,9 +22,12 @@ Poi apri http://localhost:5173. Il link `http://localhost:5173/#dona` (valido su
 | `cosa-facciamo.html` | Lavoro e formazione, prevenzione, accoglienza sociale, aiuti alimentari, sport, impatto |
 | `progetti.html` | Elenco filtrabile di progetti, iniziative, eventi e collaborazioni |
 | `iniziativa.html?id=…` | Pagina di dettaglio di ogni voce |
-| `contatti.html` | Richiesta di aiuto e sedi |
+| `aiuto.html` | Chiedi aiuto: come contattarci, come si entra, chi può accedere, familiari |
+| `sedi.html` | Sede centrale e unità locali |
+| `faq.html` | Domande frequenti |
+| `sostienici.html` | Donazione rapida, progetti da sostenere, 5×1000, bonifico, bollettino, trasparenza |
 
-Header, footer, barra mobile e percorso di donazione sono comuni a tutte le pagine e stanno in `js/layout.js`.
+La barra laterale (7 voci, modificabili nell'elenco `NAV`), il footer, la barra mobile e il percorso di donazione sono comuni a tutte le pagine e stanno in `js/layout.js`. La pagina Cosa facciamo non è nella barra: si raggiunge dal footer e dai link interni.
 
 ## Aggiungere un progetto, un'iniziativa o un evento
 
