@@ -30,7 +30,7 @@
   --f-body: "Figtree", system-ui, -apple-system, sans-serif;
 
   --header-h: 0px;       /* su desktop c'è la barra laterale, nessun header in alto */
-  --sidebar-w: 264px;
+  --sidebar-w: 288px;
   --mobilebar-h: 76px;
 }
 
@@ -685,18 +685,26 @@ a.helpcard--main:hover { background: var(--green-900); }
 .brand--side .brand__mark { background: var(--white); color: var(--green-800); }
 .sidebar__close { display: none; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .12); color: var(--white); place-items: center; }
 
-.sidebar__nav { display: flex; flex-direction: column; gap: 4px; }
+.sidebar__nav { display: flex; flex-direction: column; gap: 6px; }
 .sidebar__link {
   display: flex; align-items: center; gap: 14px;
-  min-height: 52px; padding: 10px 14px; border-radius: 12px;
-  color: var(--on-dark); text-decoration: none; font-weight: 700; font-size: 1.05rem;
+  min-height: 60px; padding: 8px 12px; border-radius: 14px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .14);
+  color: var(--white); text-decoration: none; font-weight: 800; font-size: 1.16rem; letter-spacing: .005em;
+  transition: background .15s, color .15s, border-color .15s, transform .15s;
+}
+.sidebar__link .ico {
+  width: 40px; height: 40px; padding: 9px; flex: none;
+  border-radius: 10px; background: rgba(255, 255, 255, .14); color: var(--lime-light);
   transition: background .15s, color .15s;
 }
-.sidebar__link .ico { width: 22px; height: 22px; color: var(--lime-light); }
-.sidebar__link:hover { background: rgba(255, 255, 255, .1); color: var(--white); }
-.sidebar__link[aria-current="page"] { background: var(--white); color: var(--green-800); }
-.sidebar__link[aria-current="page"] .ico { color: var(--green-800); }
-.sidebar__link--support .ico { color: var(--lime); }
+.sidebar__link:hover { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .3); transform: translateX(3px); }
+.sidebar__link:hover .ico { background: var(--lime); color: var(--ink); }
+.sidebar__link[aria-current="page"] { background: var(--white); border-color: var(--white); color: var(--green-800); }
+.sidebar__link[aria-current="page"] .ico { background: var(--green-800); color: var(--white); }
+.sidebar__link--support { border-color: var(--lime); }
+.sidebar__link--support .ico { background: var(--lime); color: var(--ink); }
 .sidebar__link:focus-visible { outline-color: var(--lime); box-shadow: none; }
 
 .sidebar__bottom { margin-top: auto; padding-top: 18px; display: grid; gap: 12px; }
