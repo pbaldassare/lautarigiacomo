@@ -938,3 +938,79 @@ a.helpcard--main:hover { background: var(--green-900); }
   .pquote { padding: 20px; }
   .pquote p { font-size: 1.2rem; }
 }
+
+/* =====================================================================
+   IL NOSTRO IMPATTO
+   ===================================================================== */
+.impatto { background: var(--green-800); color: var(--white); position: relative; overflow: hidden; }
+.impatto::before { content: ""; position: absolute; width: 420px; height: 420px; right: -160px; top: -160px; border-radius: 50%; background: var(--lime); opacity: .12; pointer-events: none; }
+.impatto .wrap { position: relative; container-type: inline-size; }
+.impatto .section-head h2 { color: var(--white); }
+.impatto .section-head p:not(.eyebrow) { color: var(--on-dark); }
+.impatto .eyebrow { display: inline-block; padding: 5px 14px; border-radius: 999px; background: var(--lime); color: var(--ink); }
+
+.impatto__numeri { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.impatto__numeri li { background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .16); border-top: 5px solid var(--lime); border-radius: var(--radius-lg); padding: 24px 22px; }
+.impatto__numeri strong { display: block; font-family: var(--f-display); font-size: clamp(2rem, 2.6vw, 2.8rem); line-height: 1.05; color: var(--lime); margin-bottom: 10px; }
+.impatto__numeri span { color: var(--on-dark); font-size: .98rem; }
+
+.impatto__sub { color: var(--white); font-size: 1.5rem; margin: 56px 0 20px; }
+.impatto__risultati { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.impatto__risultati li { display: flex; gap: 14px; align-items: flex-start; background: var(--white); color: var(--ink); border-radius: var(--radius-lg); padding: 22px; }
+.impatto__risultati strong { display: block; font-size: 1.08rem; margin-bottom: 4px; }
+.impatto__risultati p { margin: 0; color: var(--muted); font-size: .95rem; }
+.impatto__n { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--lime); color: var(--ink); font-weight: 800; font-size: 1.1rem; }
+
+.impatto__territorio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; align-items: center; margin-top: 40px; padding: 28px 30px; border-radius: var(--radius-lg); background: var(--lime); color: var(--ink); }
+.impatto__territorio h3 { color: var(--ink); margin-bottom: .3em; }
+.impatto__territorio p { margin: 0; }
+.impatto__territorio ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+.impatto__territorio strong { display: block; font-family: var(--f-display); font-size: 2rem; color: var(--green-900); line-height: 1.1; }
+.impatto__territorio span { font-size: .92rem; }
+
+.impatto__dono { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .2); }
+.impatto__dono p { margin: 0; max-width: 62ch; color: var(--on-dark); font-size: 1.08rem; }
+.impatto__dono strong { color: var(--white); }
+.impatto__fonte { margin: 22px 0 0; font-size: .85rem; color: var(--on-dark-muted); }
+.impatto__fonte a { color: var(--white); }
+
+/* Variante verde chiaro (home) */
+.impatto--lime { background: var(--lime); color: var(--ink); }
+.impatto--lime::before { background: var(--green-800); opacity: .08; }
+.impatto--lime .section-head h2 { color: var(--ink); }
+.impatto--lime .section-head p:not(.eyebrow) { color: var(--ink); }
+.impatto--lime .eyebrow { background: var(--green-800); color: var(--white); }
+.impatto--lime .impatto__numeri li { background: var(--white); border-color: var(--white); border-top-color: var(--green-800); }
+.impatto--lime .impatto__numeri strong { color: var(--green-800); }
+.impatto--lime .impatto__numeri span { color: var(--ink); }
+.impatto--lime .impatto__dono { border-top-color: rgba(29, 58, 32, .2); }
+.impatto--lime .impatto__dono p, .impatto--lime .impatto__dono strong { color: var(--ink); }
+.impatto--lime .impatto__dono .btn--dona { background: var(--green-800); color: var(--white); }
+.impatto--lime .impatto__dono .btn--dona:hover { background: var(--green-900); }
+.impatto--lime .impatto__fonte { color: var(--ink); }
+.impatto--lime .impatto__fonte a { color: var(--green-900); }
+[data-page="home"] .impatto--lime .eyebrow { background: var(--green-800); color: var(--white); }
+
+/* Colonne in base allo spazio reale (la barra laterale riduce l'area del contenuto) */
+@container (max-width: 900px) {
+  .impatto__numeri, .impatto__risultati { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container (max-width: 520px) {
+  .impatto__risultati { grid-template-columns: 1fr; }
+}
+
+/* Durate delle fasi */
+.phases h3 small { display: inline-block; margin-left: 8px; padding: 3px 10px; border-radius: 999px; background: var(--lime); color: var(--ink); font-family: var(--f-body); font-size: .78rem; font-weight: 800; vertical-align: middle; }
+
+@media (max-width: 1080px) {
+}
+@media (max-width: 640px) {
+  .impatto__numeri { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .impatto__numeri li { padding: 18px 16px; }
+  .impatto__numeri strong { font-size: 1.7rem; }
+  .impatto__numeri span { font-size: .88rem; }
+  .impatto__risultati { grid-template-columns: 1fr; }
+  .impatto__territorio { padding: 22px; }
+  .impatto__territorio ul { grid-template-columns: 1fr; }
+  .impatto__dono .btn { width: 100%; }
+}

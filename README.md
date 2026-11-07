@@ -92,3 +92,7 @@ Gli articoli stanno in `contenuti/blog.json`. Copia un blocco in `articoli` e ca
 - Gli articoli più recenti compaiono per primi; quello con `inEvidenza: true` è mostrato in grande in cima al blog.
 - `"bozza": true` nasconde un articolo finché non è pronto.
 - Il tempo di lettura è calcolato in automatico.
+
+## Aggiornare i numeri dell'impatto
+
+La sezione "Il nostro impatto" (home, Chi siamo, Cosa facciamo, Sostienici) prende tutti i numeri da `js/impatto.js`, oggetto `IMPATTO`. I dati attuali vengono dal Bilancio sociale 2022 e, per gli aiuti alimentari, dal programma PN Inclusione 2025. Quando esce un nuovo bilancio sociale basta aggiornare quei valori e il link alla fonte.
