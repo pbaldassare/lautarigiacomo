@@ -7,12 +7,13 @@
 (() => {
   "use strict";
 
-  // Le 7 voci della barra laterale
+  // Le 7 voci della barra laterale.
+  // Livelli di colore: --support (Sostienici) = verde chiaro pieno; --key (Chiedi aiuto, Progetti) = in evidenza; le altre più discrete.
   const NAV = [
-    { href: "aiuto.html", label: "Chiedi aiuto", page: "aiuto", icon: "i-life" },
+    { href: "aiuto.html", label: "Chiedi aiuto", page: "aiuto", icon: "i-life", extra: " sidebar__link--key" },
     { href: "percorso.html", label: "Il percorso", page: "percorso", icon: "i-route" },
     { href: "chi-siamo.html", label: "Chi siamo", page: "chi-siamo", icon: "i-users" },
-    { href: "progetti.html", label: "Progetti", page: "progetti", icon: "i-grid" },
+    { href: "progetti.html", label: "Progetti", page: "progetti", icon: "i-grid", extra: " sidebar__link--key" },
     { href: "sedi.html", label: "Sedi", page: "sedi", icon: "i-pin" },
     { href: "faq.html", label: "FAQ", page: "faq", icon: "i-question" },
     { href: "sostienici.html", label: "Sostienici", page: "sostienici", icon: "i-heart", extra: " sidebar__link--support" }

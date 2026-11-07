@@ -686,26 +686,47 @@ a.helpcard--main:hover { background: var(--green-900); }
 .sidebar__close { display: none; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .12); color: var(--white); place-items: center; }
 
 .sidebar__nav { display: flex; flex-direction: column; gap: 6px; }
+
+/* Voci normali: discrete */
 .sidebar__link {
   display: flex; align-items: center; gap: 14px;
-  min-height: 60px; padding: 8px 12px; border-radius: 14px;
-  background: rgba(255, 255, 255, .08);
-  border: 1px solid rgba(255, 255, 255, .14);
-  color: var(--white); text-decoration: none; font-weight: 800; font-size: 1.16rem; letter-spacing: .005em;
+  min-height: 54px; padding: 7px 12px; border-radius: 14px;
+  background: transparent; border: 2px solid transparent;
+  color: rgba(255, 255, 255, .86); text-decoration: none; font-weight: 700; font-size: 1.06rem;
   transition: background .15s, color .15s, border-color .15s, transform .15s;
 }
 .sidebar__link .ico {
-  width: 40px; height: 40px; padding: 9px; flex: none;
-  border-radius: 10px; background: rgba(255, 255, 255, .14); color: var(--lime-light);
+  width: 38px; height: 38px; padding: 9px; flex: none;
+  border-radius: 10px; background: rgba(255, 255, 255, .1); color: var(--lime-light);
   transition: background .15s, color .15s;
 }
-.sidebar__link:hover { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .3); transform: translateX(3px); }
-.sidebar__link:hover .ico { background: var(--lime); color: var(--ink); }
+.sidebar__link:hover { background: rgba(255, 255, 255, .1); color: var(--white); transform: translateX(3px); }
+
+/* Voci in evidenza: Chiedi aiuto, Progetti */
+.sidebar__link--key {
+  min-height: 62px; font-size: 1.16rem; font-weight: 800; color: var(--white);
+  background: rgba(255, 255, 255, .12); border-color: var(--lime-light);
+}
+.sidebar__link--key .ico { width: 42px; height: 42px; background: var(--lime-light); color: var(--ink); }
+.sidebar__link--key:hover { background: rgba(255, 255, 255, .2); }
+
+/* Voce principale: Sostienici */
+.sidebar__link--support {
+  min-height: 66px; font-size: 1.22rem; font-weight: 800; color: var(--ink);
+  background: var(--lime); border-color: var(--lime);
+  box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .5);
+}
+.sidebar__link--support .ico { width: 44px; height: 44px; background: var(--ink); color: var(--lime); }
+.sidebar__link--support:hover { background: var(--lime-hover); border-color: var(--lime-hover); color: var(--ink); }
+
+/* Pagina attiva */
 .sidebar__link[aria-current="page"] { background: var(--white); border-color: var(--white); color: var(--green-800); }
 .sidebar__link[aria-current="page"] .ico { background: var(--green-800); color: var(--white); }
-.sidebar__link--support { border-color: var(--lime); }
-.sidebar__link--support .ico { background: var(--lime); color: var(--ink); }
-.sidebar__link:focus-visible { outline-color: var(--lime); box-shadow: none; }
+.sidebar__link--key[aria-current="page"] { border-color: var(--lime); }
+.sidebar__link--key[aria-current="page"] .ico { background: var(--lime); color: var(--ink); }
+.sidebar__link--support[aria-current="page"] { background: var(--lime); border-color: var(--white); color: var(--ink); box-shadow: 0 0 0 2px var(--lime); }
+.sidebar__link--support[aria-current="page"] .ico { background: var(--ink); color: var(--lime); }
+.sidebar__link:focus-visible { outline-color: var(--white); box-shadow: none; }
 
 .sidebar__bottom { margin-top: auto; padding-top: 18px; display: grid; gap: 12px; }
 .sidebar__bottom .btn--dona { box-shadow: 0 8px 22px -10px rgba(0, 0, 0, .45); }
