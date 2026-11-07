@@ -32,3 +32,15 @@ window.DONAZIONI = {
     { id: "prevenzione", nome: "Prevenzione e informazione" }
   ]
 };
+
+/*
+ * Collegamento al database (Supabase) usato dall'area riservata.
+ * url e anonKey si trovano in Supabase → Project Settings → API.
+ * La anonKey è pubblica per natura: i permessi di scrittura sono protetti
+ * dalle regole del database (solo i collaboratori abilitati possono modificare).
+ * Se restano vuoti, il sito usa i contenuti del file contenuti/iniziative.json.
+ */
+window.LAUTARI_DB = {
+  url: "",
+  anonKey: ""
+};

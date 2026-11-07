@@ -53,9 +53,9 @@
   /* Campagne ed eventi */
   const campEl = $("#campagne");
   if (campEl) {
-    json("contenuti/iniziative.json")
-      .then((d) => {
-        const voci = (d.voci || [])
+    window.LautariDati.iniziative()
+      .then((tutte) => {
+        const voci = tutte
           .filter((v) => v.tipo === "evento" || v.tipo === "iniziativa")
           .sort((a, b) => (b.data || "").localeCompare(a.data || ""))
           .slice(0, 4);

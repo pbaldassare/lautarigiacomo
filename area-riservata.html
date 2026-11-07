@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Area riservata · Comunità Lautari</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#336739">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="area">
+  <script src="js/layout.js"></script>
+
+  <main id="contenuto" class="area">
+
+    <!-- Database non collegato -->
+    <section class="area__panel" id="vista-config" hidden>
+      <div class="wrap area__narrow">
+        <span class="area__icon"><svg class="ico"><use href="#i-user"/></svg></span>
+        <h1>Area riservata</h1>
+        <p>L'area riservata non è ancora collegata al database. Inserisci l'indirizzo e la chiave pubblica di Supabase in <code>js/config.js</code>.</p>
+      </div>
+    </section>
+
+    <!-- Accesso -->
+    <section class="area__panel" id="vista-login" hidden>
+      <div class="wrap area__narrow">
+        <form class="authbox" id="form-login" novalidate>
+          <span class="area__icon"><svg class="ico"><use href="#i-user"/></svg></span>
+          <h1>Area riservata</h1>
+          <p class="authbox__lead">Accesso per i collaboratori della Comunità Lautari.</p>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="login-email" autocomplete="username" required>
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <span class="field__pw">
+              <input type="password" id="login-password" autocomplete="current-password" required>
+              <button type="button" class="field__toggle" data-mostra="login-password" aria-label="Mostra la password">Mostra</button>
+            </span>
+          </label>
+          <p class="formmsg" id="login-msg" role="alert"></p>
+          <button class="btn btn--primary btn--block btn--xl" type="submit" id="login-btn">Accedi</button>
+          <button class="linkbtn authbox__forgot" type="button" id="btn-dimenticata">Password dimenticata?</button>
+          <p class="authbox__note">Gli account sono creati dalla comunità. Se non hai le credenziali, chiedile a <a href="mailto:segreteria@lautari.it">segreteria@lautari.it</a>.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Nuova password (link di recupero o invito) -->
+    <section class="area__panel" id="vista-password" hidden>
+      <div class="wrap area__narrow">
+        <form class="authbox" id="form-password" novalidate>
+          <span class="area__icon"><svg class="ico"><use href="#i-user"/></svg></span>
+          <h1>Imposta la password</h1>
+          <p class="authbox__lead">Scegli una password di almeno 10 caratteri.</p>
+          <label class="field">
+            <span>Nuova password</span>
+            <input type="password" id="nuova-password" autocomplete="new-password" minlength="10" required>
+          </label>
+          <label class="field">
+            <span>Ripeti la password</span>
+            <input type="password" id="nuova-password-2" autocomplete="new-password" minlength="10" required>
+          </label>
+          <p class="formmsg" id="password-msg" role="alert"></p>
+          <button class="btn btn--primary btn--block btn--xl" type="submit">Salva la password</button>
+          <button class="linkbtn authbox__forgot" type="button" id="annulla-password" hidden>Annulla</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Account non abilitato -->
+    <section class="area__panel" id="vista-negato" hidden>
+      <div class="wrap area__narrow">
+        <div class="authbox">
+          <span class="area__icon"><svg class="ico"><use href="#i-user"/></svg></span>
+          <h1>Account non abilitato</h1>
+          <p class="authbox__lead">Hai effettuato l'accesso come <strong id="negato-email"></strong>, ma questo account non è ancora abilitato a modificare i contenuti. Chiedi l'abilitazione alla segreteria.</p>
+          <button class="btn btn--ghost btn--block" type="button" data-esci>Esci</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pannello dei contenuti -->
+    <section class="area__panel" id="vista-pannello" hidden>
+      <div class="wrap">
+        <header class="dash__head">
+          <div>
+            <p class="eyebrow">Area riservata</p>
+            <h1>Ciao <span id="utente-nome"></span></h1>
+            <p class="dash__lead">Da qui aggiungi e modifichi progetti, iniziative, eventi e collaborazioni. Quello che pubblichi compare subito sul sito.</p>
+          </div>
+          <div class="dash__actions">
+            <button class="btn btn--primary" type="button" id="btn-nuovo"><svg class="ico"><use href="#i-plus"/></svg> Nuovo contenuto</button>
+            <button class="btn btn--ghost" type="button" id="btn-cambia-password">Cambia password</button>
+            <button class="btn btn--ghost" type="button" data-esci>Esci</button>
+          </div>
+        </header>
+
+        <div class="dash__tools">
+          <div class="filters" id="filtri-area" role="toolbar" aria-label="Filtra per tipo"></div>
+          <label class="dash__search">
+            <span class="sr-only">Cerca</span>
+            <input type="search" id="cerca" placeholder="Cerca per titolo…">
+          </label>
+        </div>
+
+        <ul class="dash__list" id="elenco-area" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- Editor -->
+    <section class="area__panel" id="vista-editor" hidden>
+      <div class="wrap">
+        <button class="crumb crumb--dark linkbtn" type="button" id="torna-elenco"><svg class="ico"><use href="#i-back"/></svg> Tutti i contenuti</button>
+        <h1 id="editor-titolo">Nuovo contenuto</h1>
+
+        <form class="editor" id="form-editor" novalidate>
+          <div class="editor__main">
+            <fieldset class="editor__box">
+              <legend>Cosa stai pubblicando</legend>
+              <div class="tipi" id="tipi" role="radiogroup" aria-label="Tipo di contenuto">
+                <label><input type="radio" name="tipo" value="evento" checked><span>Evento</span></label>
+                <label><input type="radio" name="tipo" value="progetto"><span>Progetto</span></label>
+                <label><input type="radio" name="tipo" value="iniziativa"><span>Iniziativa</span></label>
+                <label><input type="radio" name="tipo" value="collaborazione"><span>Collaborazione</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="editor__box">
+              <legend>Testi</legend>
+              <label class="field">
+                <span>Titolo *</span>
+                <input type="text" id="f-titolo" maxlength="160" required>
+              </label>
+              <label class="field">
+                <span>Indirizzo della pagina</span>
+                <span class="field__prefix"><em>iniziativa.html?id=</em><input type="text" id="f-id" maxlength="80" pattern="[a-z0-9]+(-[a-z0-9]+)*" required></span>
+                <small>Si crea dal titolo. Solo lettere minuscole, numeri e trattini; dopo la pubblicazione non si può cambiare.</small>
+              </label>
+              <label class="field">
+                <span>Riassunto * <small id="conta-sommario">0/400</small></span>
+                <textarea id="f-sommario" rows="3" maxlength="400" required></textarea>
+                <small>Una o due frasi: compaiono nelle anteprime e in home.</small>
+              </label>
+              <label class="field">
+                <span>Testo della pagina</span>
+                <textarea id="f-testo" rows="12"></textarea>
+                <small>Lascia una riga vuota tra un paragrafo e l'altro. Scrivi <code>## Titoletto</code> per un sottotitolo e inizia le righe con <code>- </code> per un elenco puntato.</small>
+              </label>
+            </fieldset>
+
+            <fieldset class="editor__box">
+              <legend>Quando e dove</legend>
+              <div class="field-row">
+                <label class="field">
+                  <span>Data</span>
+                  <input type="date" id="f-data">
+                </label>
+                <label class="field" id="campo-ora">
+                  <span>Ora</span>
+                  <input type="text" id="f-ora" maxlength="20" placeholder="Es. 19:30">
+                </label>
+              </div>
+              <label class="field">
+                <span>Luogo</span>
+                <input type="text" id="f-luogo" maxlength="120" placeholder="Es. Borgo La Caccia, Pozzolengo (BS)">
+              </label>
+              <div class="field-row">
+                <label class="field">
+                  <span>Stato</span>
+                  <input type="text" id="f-stato" maxlength="40" placeholder="Es. In corso">
+                </label>
+                <label class="field">
+                  <span>Data scritta a mano</span>
+                  <input type="text" id="f-data-testo" maxlength="40" placeholder="Es. Estate 2027">
+                </label>
+              </div>
+              <small class="field__hint">Per gli eventi la data è importante: quelli futuri compaiono per primi sul sito. "Data scritta a mano" sostituisce la data mostrata.</small>
+            </fieldset>
+
+            <fieldset class="editor__box">
+              <legend>Link e donazioni</legend>
+              <div class="field-row">
+                <label class="field">
+                  <span>Testo del link</span>
+                  <input type="text" id="f-link-testo" maxlength="80" placeholder="Es. Leggi l'articolo">
+                </label>
+                <label class="field">
+                  <span>Indirizzo del link</span>
+                  <input type="url" id="f-link-url" placeholder="https://…">
+                </label>
+              </div>
+              <label class="field">
+                <span>Il pulsante "Dona ora" della pagina sostiene</span>
+                <select id="f-donazione"></select>
+              </label>
+            </fieldset>
+          </div>
+
+          <aside class="editor__side">
+            <fieldset class="editor__box">
+              <legend>Foto</legend>
+              <div class="imgprev" id="img-prev"><span>Nessuna foto</span></div>
+              <label class="btn btn--ghost btn--block upload">
+                <svg class="ico"><use href="#i-download"/></svg> Carica una foto
+                <input type="file" id="f-file" accept="image/jpeg,image/png,image/webp">
+              </label>
+              <small>JPG, PNG o WebP, massimo 5 MB. Usa foto di cui avete i diritti e il consenso delle persone ritratte.</small>
+              <label class="field">
+                <span>Oppure indirizzo di una foto</span>
+                <input type="url" id="f-immagine" placeholder="https://…">
+              </label>
+            </fieldset>
+
+            <fieldset class="editor__box">
+              <legend>Pubblicazione</legend>
+              <label class="check"><input type="checkbox" id="f-pubblicato" checked> <span>Pubblicato sul sito</span></label>
+              <small>Togli la spunta per salvarlo come bozza, visibile solo nell'area riservata.</small>
+              <label class="check"><input type="checkbox" id="f-evidenza"> <span>In evidenza in home</span></label>
+              <p class="formmsg" id="editor-msg" role="alert"></p>
+              <button class="btn btn--primary btn--block btn--xl" type="submit" id="btn-salva">Salva</button>
+              <a class="btn btn--ghost btn--block" id="btn-vedi" href="#" target="_blank" rel="noopener" hidden>Vedi sul sito</a>
+              <button class="btn btn--danger btn--block" type="button" id="btn-elimina" hidden>Elimina</button>
+              <p class="editor__meta" id="editor-meta"></p>
+            </fieldset>
+          </aside>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dati.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="js/area-riservata.js"></script>
+</body>
+</html>

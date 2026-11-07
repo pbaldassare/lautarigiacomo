@@ -57,6 +57,8 @@
     <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.5 2.8 2.4 4.6 5 5"/></symbol>
     <symbol id="i-external" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></g></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
   </svg>`;
 
   const top = `
@@ -69,6 +71,7 @@
         <span class="brand__text">Comunità <strong>Lautari</strong></span>
       </a>
       <button class="btn btn--dona topbar__dona" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
+      <a class="userbtn" href="area-riservata.html" aria-label="Area riservata"${page === "area" ? ' aria-current="page"' : ""}><svg class="ico"><use href="#i-user"/></svg></a>
       <button class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Apri il menu">
         <svg class="ico"><use href="#i-menu"/></svg>
       </button>
@@ -81,6 +84,7 @@
         <span class="brand__mark"><svg class="ico"><use href="#i-heart"/></svg></span>
         <span class="brand__text">Comunità <strong>Lautari</strong></span>
       </a>
+      <a class="userbtn userbtn--side" href="area-riservata.html" aria-label="Area riservata" title="Area riservata"${page === "area" ? ' aria-current="page"' : ""}><svg class="ico"><use href="#i-user"/></svg></a>
       <button class="sidebar__close" aria-label="Chiudi il menu"><svg class="ico"><use href="#i-close"/></svg></button>
     </div>
     <nav class="sidebar__nav" aria-label="Principale">
@@ -111,6 +115,7 @@
         <a href="chi-siamo.html#trasparenza">Amministrazione trasparente</a>
         <a class="footer__social" href="https://www.facebook.com/comunita.lautari/" rel="noopener" target="_blank"><svg class="ico"><use href="#i-facebook"/></svg> Seguici su Facebook</a>
         <a href="comunicazione.html#area-stampa">Area stampa</a>
+        <a href="area-riservata.html">Area riservata</a>
         <a href="https://www.lautari.it/wp-content/uploads/2018/10/privacy-policy-lautari-it.pdf" rel="noopener" target="_blank">Privacy</a>
         <button class="btn btn--dona" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
       </div>

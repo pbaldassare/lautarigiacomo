@@ -75,10 +75,8 @@
   }
 
   async function carica() {
-    const r = await fetch("contenuti/iniziative.json", { cache: "no-cache" });
-    if (!r.ok) throw new Error("Contenuti non disponibili");
-    const d = await r.json();
-    return ordina(d.voci || []);
+    // dal database se collegato, altrimenti da contenuti/iniziative.json (vedi js/dati.js)
+    return ordina(await window.LautariDati.iniziative());
   }
 
   const errore = (el) =>

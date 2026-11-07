@@ -107,3 +107,25 @@ La pagina Media e comunicazione legge `contenuti/comunicazione.json`:
 - `materiali`: documenti e logo da scaricare.
 
 Campagne ed eventi stanno in `contenuti/iniziative.json` (tipo `evento` o `iniziativa`): compaiono sia nella pagina Progetti sia in Media e comunicazione.
+
+## Area riservata per i collaboratori
+
+L'icona con l'omino (in alto nella barra laterale, o in alto a destra su telefono) porta ad `area-riservata.html`. I collaboratori entrano con email e password e possono aggiungere, modificare, mettere in bozza o eliminare progetti, iniziative, eventi e collaborazioni, con foto. Quello che pubblicano compare subito sul sito.
+
+Funziona con [Supabase](https://supabase.com) (login, database e foto):
+
+- `supabase/schema.sql`: tabelle, permessi e spazio per le foto. Solo le email presenti nella tabella `collaboratori` possono modificare; tutti gli altri possono solo leggere i contenuti pubblicati.
+- `supabase/seed.sql`: carica nel database i contenuti attuali di `contenuti/iniziative.json`.
+- `js/config.js` → `LAUTARI_DB`: indirizzo e chiave pubblica del progetto. Se sono vuoti, il sito usa il file `contenuti/iniziative.json` come prima.
+
+### Aggiungere un collaboratore
+
+1. Supabase → Authentication → Users → **Invite user**, con l'email del collaboratore: riceve un'email, clicca il link e imposta la sua password.
+2. Supabase → Table Editor → tabella `collaboratori` → **Insert row** con la stessa email (in minuscolo) e il nome.
+
+Per togliere l'accesso basta eliminare la riga dalla tabella `collaboratori`.
+
+### Impostazioni da fare una volta in Supabase
+
+- Authentication → Sign In / Providers: disattiva **Allow new users to sign up** (gli account li crea solo la comunità).
+- Authentication → URL Configuration: imposta come **Site URL** l'indirizzo del sito e aggiungi `…/area-riservata.html` tra i **Redirect URLs** (servono per i link di invito e di recupero password).
