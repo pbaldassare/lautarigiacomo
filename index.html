@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comunità Lautari · Dona ora</title>
+  <meta name="description" content="Comunità Lautari, dal 1992 accanto a chi vuole uscire dalla dipendenza da droghe e alcool. Con 40 € sostieni la giornata di un ragazzo in comunità.">
+  <meta name="theme-color" content="#16483a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+  <!-- SVG sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.4h2c.7-1.3 2.2-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10h18L12 4 3 10zM5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+  </svg>
+
+  <!-- Barra aiuto -->
+  <div class="helpbar">
+    <div class="wrap helpbar__in">
+      <span class="helpbar__long">Hai bisogno di aiuto per te o per un tuo caro?</span>
+      <span class="helpbar__short">Hai bisogno di aiuto?</span>
+      <a href="tel:+390309918700"><svg class="ico"><use href="#i-phone"/></svg> 030 991 8700</a>
+    </div>
+  </div>
+
+  <!-- Header sticky: il pulsante Dona è sempre visibile -->
+  <header class="header" id="top">
+    <div class="wrap header__in">
+      <a class="brand" href="#top" aria-label="Comunità Lautari, torna all'inizio">
+        <span class="brand__mark"><svg class="ico"><use href="#i-heart"/></svg></span>
+        <span class="brand__text">Comunità <strong>Lautari</strong></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Principale">
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#percorso">Percorso</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#come-aiutare">Come aiutare</a>
+        <a href="#contatti">Sedi e contatti</a>
+      </nav>
+      <button class="btn btn--dona header__dona" data-dona>
+        <svg class="ico"><use href="#i-heart"/></svg> Dona ora
+      </button>
+      <button class="menu-toggle" aria-controls="nav" aria-expanded="false" aria-label="Apri il menu">
+        <svg class="ico"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenuto">
+
+    <!-- HERO con donazione rapida -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="wrap hero__in">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--light">Dal 1992 · comunità terapeutica</p>
+          <h1>Il tuo futuro<br>è <em>insieme</em>.</h1>
+          <p class="hero__lead">Accogliamo gratuitamente persone che vogliono liberarsi dalla dipendenza da droghe e alcool. Ogni giornata in comunità esiste grazie a chi dona.</p>
+          <ul class="hero__facts">
+            <li><strong>Gratuita</strong> la permanenza</li>
+            <li><strong>5</strong> sedi in Italia</li>
+            <li><strong>3–5 anni</strong> di percorso</li>
+          </ul>
+        </div>
+
+        <form class="quick" id="quick" aria-labelledby="quick-title">
+          <p class="quick__kicker"><svg class="ico"><use href="#i-heart"/></svg> Donazione rapida</p>
+          <h2 id="quick-title">Con <span data-costo>40</span> € sostieni la giornata di un ragazzo in comunità</h2>
+          <fieldset class="chips" id="quick-chips">
+            <legend class="sr-only">Scegli l'importo</legend>
+          </fieldset>
+          <p class="quick__impact" id="quick-impact" aria-live="polite"></p>
+          <button class="btn btn--dona btn--xl btn--block" type="submit">
+            <svg class="ico"><use href="#i-heart"/></svg> Dona <span id="quick-amount">40</span> €
+          </button>
+          <p class="quick__note">Bonifico o bollettino: ti servono 2 minuti. Le donazioni sono fiscalmente agevolate.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- IMPATTO -->
+    <section class="impact" aria-labelledby="impact-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Cosa rende possibile il tuo dono</p>
+          <h2 id="impact-title">Non devi aiutarli tutti.<br>Ne basta uno.</h2>
+        </div>
+        <div class="impact__grid">
+          <button class="impact-card" data-dona data-importo="40">
+            <span class="impact-card__amount">40 €</span>
+            <span class="impact-card__what">Una giornata</span>
+            <span class="impact-card__desc">Vitto, alloggio, lavoro e sostegno terapeutico per un ragazzo, per un giorno intero.</span>
+            <span class="impact-card__cta">Dona 40 € <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </button>
+          <button class="impact-card impact-card--feat" data-dona data-importo="280">
+            <span class="impact-card__badge">Più impatto</span>
+            <span class="impact-card__amount">280 €</span>
+            <span class="impact-card__what">Una settimana</span>
+            <span class="impact-card__desc">Sette giorni di percorso: il tempo in cui si costruiscono abitudini nuove.</span>
+            <span class="impact-card__cta">Dona 280 € <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </button>
+          <button class="impact-card" data-dona data-importo="40" data-frequenza="mensile">
+            <span class="impact-card__amount">40 € <small>/ mese</small></span>
+            <span class="impact-card__what">Un sostegno costante</span>
+            <span class="impact-card__desc">Con un bonifico periodico garantisci una giornata in comunità ogni mese.</span>
+            <span class="impact-card__cta">Dona ogni mese <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </button>
+        </div>
+        <ul class="numbers">
+          <li><strong>1992</strong><span>anno di fondazione</span></li>
+          <li><strong>110</strong><span>persone in grave deprivazione sostenute nel 2025</span></li>
+          <li><strong>96.030</strong><span>pacchi e pasti distribuiti nel 2025</span></li>
+          <li><strong>3.224 kg</strong><span>di prodotti alimentari nel 2025</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CHI SIAMO -->
+    <section class="about" id="chi-siamo" aria-labelledby="about-title">
+      <div class="wrap about__in">
+        <figure class="about__img">
+          <img src="https://www.lautari.it/wp-content/uploads/2018/09/chi-siamo-lautari-comunita-02.jpg" alt="La comunità Lautari a Pozzolengo" loading="lazy">
+        </figure>
+        <div class="about__copy">
+          <p class="eyebrow">Chi siamo</p>
+          <h2 id="about-title">Una comunità per ricominciare</h2>
+          <p>Lautari è una comunità terapeutica per la riabilitazione di persone dipendenti da droghe e alcool, fondata nel 1992. Il nostro obiettivo è la completa riabilitazione della persona e un nuovo stile di vita fondato su autonomia, responsabilità, tolleranza, partecipazione, solidarietà, fiducia e autostima.</p>
+          <p>La permanenza è <strong>completamente gratuita</strong>. Un'équipe di psicologi, medici, psichiatri, educatori, assistenti sociali e maestri del lavoro accompagna ogni ragazzo, ogni giorno.</p>
+          <button class="btn btn--dona" data-dona><svg class="ico"><use href="#i-heart"/></svg> Sostieni la comunità</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COSA FACCIAMO -->
+    <section class="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Cosa facciamo per aiutarli</p>
+          <h2 id="work-title">Il lavoro come terapia</h2>
+          <p>I ragazzi imparano un mestiere e ritrovano il valore di ciò che costruiscono con le proprie mani.</p>
+        </div>
+        <div class="work__grid">
+          <figure><img src="https://www.lautari.it/wp-content/uploads/2018/09/allevamento-lautari.png" alt="" loading="lazy"><figcaption>Allevamento</figcaption></figure>
+          <figure><img src="https://www.lautari.it/wp-content/uploads/2018/09/falegnameria-lautari.png" alt="" loading="lazy"><figcaption>Falegnameria</figcaption></figure>
+          <figure><img src="https://www.lautari.it/wp-content/uploads/2018/09/autofficina-lautari.png" alt="" loading="lazy"><figcaption>Autofficina</figcaption></figure>
+          <figure><img src="https://www.lautari.it/wp-content/uploads/2018/09/cantiere-edile-lautari.png" alt="" loading="lazy"><figcaption>Cantiere edile</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERCORSO -->
+    <section class="path" id="percorso" aria-labelledby="path-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Il percorso riabilitativo</p>
+          <h2 id="path-title">Quattro fasi, dai 3 ai 5 anni</h2>
+        </div>
+        <ol class="steps">
+          <li><span>01</span><h3>Pre-accoglienza</h3><p>Colloqui conoscitivi. Si accede in autonomia o tramite SERT, SMI, NOA e associazioni.</p></li>
+          <li><span>02</span><h3>Accoglienza</h3><p>Il primo periodo in comunità: ambientarsi, stabilizzarsi, conoscere le regole e le persone.</p></li>
+          <li><span>03</span><h3>Comunità terapeutica</h3><p>Lavoro, colloqui individuali e di gruppo, sostegno medico e psicologico.</p></li>
+          <li><span>04</span><h3>Reinserimento</h3><p>Il ritorno alla vita, al lavoro e alla famiglia, con un monitoraggio di almeno 6 mesi.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROGETTI -->
+    <section class="projects" id="progetti" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">I nostri progetti</p>
+          <h2 id="projects-title">Scegli cosa sostenere</h2>
+        </div>
+        <div class="projects__grid">
+          <article class="project">
+            <img src="https://www.lautari.it/wp-content/uploads/2018/10/formazione-e-prevenzione-lautari.jpg" alt="" loading="lazy">
+            <div class="project__body">
+              <h3>Drug Zero</h3>
+              <p>Prevenzione nelle scuole: la comunità entra in classe e le classi vengono in comunità, per prevenire l'uso di sostanze.</p>
+              <button class="btn btn--ghost" data-dona data-progetto="drug-zero"><svg class="ico"><use href="#i-heart"/></svg> Sostieni Drug Zero</button>
+            </div>
+          </article>
+          <article class="project">
+            <img src="https://www.lautari.it/wp-content/uploads/2018/09/il-percorso-in-comunita-02.jpg" alt="" loading="lazy">
+            <div class="project__body">
+              <h3>Salvagente</h3>
+              <p>Accoglienza residenziale per chi vive un forte svantaggio sociale: disoccupati, genitori soli, donne che hanno subito maltrattamenti.</p>
+              <button class="btn btn--ghost" data-dona data-progetto="salvagente"><svg class="ico"><use href="#i-heart"/></svg> Sostieni Salvagente</button>
+            </div>
+          </article>
+          <article class="project">
+            <img src="https://www.lautari.it/wp-content/uploads/2018/10/sede-brescia-lautari-comunita.jpg" alt="" loading="lazy">
+            <div class="project__body">
+              <h3>Grest</h3>
+              <p>Prevenzione e informazione sulla droga per animatori e ragazzi dei centri estivi parrocchiali, e per i loro genitori.</p>
+              <button class="btn btn--ghost" data-dona data-progetto="grest"><svg class="ico"><use href="#i-heart"/></svg> Sostieni Grest</button>
+            </div>
+          </article>
+          <article class="project">
+            <img src="https://www.lautari.it/wp-content/uploads/2018/09/sede-lautari-brescia-02.jpg" alt="" loading="lazy">
+            <div class="project__body">
+              <h3>Prevenzione e informazione</h3>
+              <p>Le testimonianze dei ragazzi in parrocchie, scuole e centri giovanili: chi ce l'ha fatta racconta come.</p>
+              <button class="btn btn--ghost" data-dona data-progetto="prevenzione"><svg class="ico"><use href="#i-heart"/></svg> Sostieni la prevenzione</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COME AIUTARE -->
+    <section class="ways" id="come-aiutare" aria-labelledby="ways-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Come aiutare</p>
+          <h2 id="ways-title">Tre modi per donare, anche senza spendere</h2>
+        </div>
+        <div class="ways__grid">
+          <div class="way way--feat">
+            <h3>5×1000</h3>
+            <p>Non costa nulla. Nella dichiarazione dei redditi (730, CU, Redditi PF) firma nel riquadro delle organizzazioni non lucrative e scrivi il nostro codice fiscale.</p>
+            <div class="copybox">
+              <span class="copybox__label">Codice fiscale</span>
+              <code class="copybox__value" data-cf>01702160985</code>
+              <button class="copybtn" data-copy="cf" aria-label="Copia il codice fiscale"><svg class="ico"><use href="#i-copy"/></svg><span>Copia</span></button>
+            </div>
+          </div>
+          <div class="way">
+            <h3>Bonifico bancario</h3>
+            <p>Una volta o ogni mese, impostando un bonifico periodico dal tuo home banking.</p>
+            <div class="copybox">
+              <span class="copybox__label">IBAN</span>
+              <code class="copybox__value" data-iban-fmt></code>
+              <button class="copybtn" data-copy="iban" aria-label="Copia l'IBAN"><svg class="ico"><use href="#i-copy"/></svg><span>Copia</span></button>
+            </div>
+            <button class="btn btn--dona btn--block" data-dona data-metodo="bonifico"><svg class="ico"><use href="#i-heart"/></svg> Dona con bonifico</button>
+          </div>
+          <div class="way">
+            <h3>Bollettino postale</h3>
+            <p>In qualsiasi ufficio postale o dall'app di Poste Italiane.</p>
+            <div class="copybox">
+              <span class="copybox__label">Conto corrente postale</span>
+              <code class="copybox__value" data-ccp>000012850251</code>
+              <button class="copybtn" data-copy="ccp" aria-label="Copia il numero di conto corrente postale"><svg class="ico"><use href="#i-copy"/></svg><span>Copia</span></button>
+            </div>
+            <button class="btn btn--dona btn--block" data-dona data-metodo="bollettino"><svg class="ico"><use href="#i-heart"/></svg> Dona con bollettino</button>
+          </div>
+        </div>
+        <details class="tax">
+          <summary>Agevolazioni fiscali: come detrarre o dedurre la tua donazione</summary>
+          <div class="tax__body">
+            <p>Le donazioni alla Cooperativa (ONLUS) sono deducibili o detraibili dalle imposte nei limiti previsti dalla legge, sia per i privati sia per le imprese.</p>
+            <ul>
+              <li>Conserva la ricevuta del bollettino, la contabile del bonifico o l'estratto conto.</li>
+              <li>Le donazioni in contanti non danno diritto alle agevolazioni.</li>
+              <li>Per ricevere la ricevuta della Cooperativa scrivi a <a href="mailto:segreteria@lautari.it">segreteria@lautari.it</a> indicando nome, cognome e codice fiscale.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team" aria-labelledby="team-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Le persone</p>
+          <h2 id="team-title">Chi accompagna i ragazzi</h2>
+        </div>
+        <div class="team__grid">
+          <figure><img src="https://www.lautari.it/wp-content/uploads/2018/09/andrea-bonomelli.png" alt="Andrea Bonomelli" loading="lazy"><figcaption><strong>Andrea Bonomelli</strong>Presidente della comunità</figcaption></figure>
+          <figure><img src="https://www.lautari.it/wp-content/uploads/2018/09/marta-gurrieri.png" alt="Marta Gurrieri" loading="lazy"><figcaption><strong>Marta Gurrieri</strong>Psicoterapeuta, responsabile terapeutico</figcaption></figure>
+          <figure><img src="https://www.lautari.it/wp-content/uploads/2018/09/alberto-caputo.png" alt="Alberto Caputo" loading="lazy"><figcaption><strong>Alberto Caputo</strong>Educatore</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="final">
+      <div class="wrap final__in">
+        <h2>Oggi qualcuno sta provando a rialzarsi.<br>Puoi tendergli la mano.</h2>
+        <button class="btn btn--dona btn--xl" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section class="contacts" id="contatti" aria-labelledby="contacts-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Sedi e contatti</p>
+          <h2 id="contacts-title">Siamo in cinque regioni</h2>
+        </div>
+        <div class="contacts__grid">
+          <div class="sede sede--main">
+            <h3>Sede centrale</h3>
+            <p><svg class="ico"><use href="#i-pin"/></svg> Via Monte Ingrana, 2 · 25010 Pozzolengo (BS)</p>
+            <p><svg class="ico"><use href="#i-phone"/></svg> <a href="tel:+390309918700">+39 030 991 8700</a></p>
+            <p><svg class="ico"><use href="#i-mail"/></svg> <a href="mailto:info@lautari.it">info@lautari.it</a></p>
+            <p class="sede__sub">Uffici amministrativi: <a href="tel:+390309916044">+39 030 991 6044</a> · <a href="mailto:segreteria@lautari.it">segreteria@lautari.it</a></p>
+          </div>
+          <div class="sede"><h3>Como</h3><p>Via de Gasperi 14 · 22070 Veniano (CO)</p><p><a href="tel:+39031931141">+39 031 931141</a> · <a href="mailto:como@lautari.it">como@lautari.it</a></p></div>
+          <div class="sede"><h3>Roma</h3><p>Viale Piave 59, Tor S. Lorenzo · 00040 Ardea (RM)</p><p><a href="tel:+390691010933">+39 06 9101 0933</a> · <a href="mailto:roma@lautari.it">roma@lautari.it</a></p></div>
+          <div class="sede"><h3>Firenze</h3><p>Via Cassia per Siena 50, Bargino · 50026 San Casciano (FI)</p><p><a href="tel:+390558249278">+39 055 824 9278</a> · <a href="mailto:firenze@lautari.it">firenze@lautari.it</a></p></div>
+          <div class="sede"><h3>Pordenone</h3><p>Via Aprilis 19 · 33080 San Quirino (PN)</p><p><a href="tel:+390434919558">+39 0434 919558</a> · <a href="mailto:pordenone@lautari.it">pordenone@lautari.it</a></p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <div>
+        <p class="brand brand--footer"><span class="brand__mark"><svg class="ico"><use href="#i-heart"/></svg></span><span class="brand__text">Comunità <strong>Lautari</strong></span></p>
+        <p>Cooperativa di Solidarietà Lautari Onlus<br>Via Monte Ingrana 2, 25010 Pozzolengo (BS)<br>C.F. e P.IVA 01702160985 · R.E.A. Brescia n. 342243<br>Albo Nazionale Società Cooperative n. A107298</p>
+      </div>
+      <div class="footer__links">
+        <a href="https://www.facebook.com/comunita.lautari/" rel="noopener" target="_blank">Facebook</a>
+        <a href="https://www.lautari.it/amministrazione-trasparente/" rel="noopener" target="_blank">Amministrazione trasparente</a>
+        <a href="https://www.lautari.it/wp-content/uploads/2018/10/privacy-policy-lautari-it.pdf" rel="noopener" target="_blank">Privacy</a>
+        <button class="btn btn--dona" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Barra mobile fissa -->
+  <div class="mobilebar">
+    <a class="mobilebar__call" href="tel:+390309918700" aria-label="Chiama la comunità"><svg class="ico"><use href="#i-phone"/></svg></a>
+    <button class="btn btn--dona mobilebar__dona" data-dona><svg class="ico"><use href="#i-heart"/></svg> Dona ora</button>
+  </div>
+
+  <!-- PERCORSO DI DONAZIONE -->
+  <dialog class="donate" id="donate" aria-labelledby="donate-title">
+    <div class="donate__head">
+      <button class="iconbtn" id="donate-back" aria-label="Indietro" hidden><svg class="ico"><use href="#i-back"/></svg></button>
+      <ol class="progress" aria-label="Passaggi della donazione">
+        <li class="is-active">Importo</li><li>Metodo</li><li>Conferma</li>
+      </ol>
+      <button class="iconbtn" id="donate-close" aria-label="Chiudi"><svg class="ico"><use href="#i-close"/></svg></button>
+    </div>
+
+    <!-- Passo 1: importo -->
+    <section class="dstep" data-step="1">
+      <h2 id="donate-title">Quanto vuoi donare?</h2>
+      <div class="freq" role="radiogroup" aria-label="Frequenza">
+        <label><input type="radio" name="freq" value="una-tantum" checked><span>Una volta</span></label>
+        <label><input type="radio" name="freq" value="mensile"><span>Ogni mese</span></label>
+      </div>
+      <fieldset class="chips chips--lg" id="donate-chips">
+        <legend class="sr-only">Importo</legend>
+      </fieldset>
+      <label class="custom">
+        <span>Altro importo</span>
+        <span class="custom__field"><input type="number" id="custom-amount" min="1" step="1" inputmode="numeric" placeholder="Es. 60"><span>€</span></span>
+      </label>
+      <p class="impact-line" id="impact-line" aria-live="polite"></p>
+      <label class="select">
+        <span>Destina la donazione a</span>
+        <select id="project"></select>
+      </label>
+      <button class="btn btn--dona btn--xl btn--block" id="to-step-2">Continua <svg class="ico"><use href="#i-arrow"/></svg></button>
+    </section>
+
+    <!-- Passo 2: metodo -->
+    <section class="dstep" data-step="2" hidden>
+      <h2>Come preferisci donare?</h2>
+      <p class="dstep__summary" id="summary-2"></p>
+      <div class="methods" id="methods"></div>
+    </section>
+
+    <!-- Passo 3: istruzioni -->
+    <section class="dstep" data-step="3" hidden>
+      <h2 id="step3-title">Ultimo passo</h2>
+      <p class="dstep__summary" id="summary-3"></p>
+      <div id="instructions"></div>
+      <div class="after">
+        <p><strong>Vuoi la ricevuta per le agevolazioni fiscali?</strong> Dopo la donazione avvisaci con un clic: l'email è già pronta.</p>
+        <a class="btn btn--ghost btn--block" id="notify" href="#"><svg class="ico"><use href="#i-mail"/></svg> Ho donato, inviatemi la ricevuta</a>
+      </div>
+      <p class="thanks"><svg class="ico"><use href="#i-heart"/></svg> Grazie. Con il tuo gesto un ragazzo ha un giorno in più per ricominciare.</p>
+    </section>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
