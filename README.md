@@ -18,7 +18,7 @@ Il sito non ha bisogno di compilazione, ma Cloudflare Pages esegue `npm run buil
 
 Impostazioni consigliate in Cloudflare Pages: build command `npm run build`, output directory `dist`.
 
-Dopo la prima pubblicazione aggiungi l'indirizzo `https://…/area-riservata.html` tra i Redirect URLs di Supabase (vedi "Area riservata").
+Il sito è online su https://lautarigiacomo.pages.dev. Cloudflare toglie `.html` dagli indirizzi, quindi tra i Redirect URLs di Supabase va aggiunto `https://lautarigiacomo.pages.dev/area-riservata` (vedi "Area riservata").
 
 ## Pagine
 
@@ -135,6 +135,6 @@ Per togliere l'accesso basta eliminare la riga da `lautari_collaboratori`.
 
 ### Impostazioni in Supabase
 
-- Authentication → URL Configuration → **Redirect URLs**: aggiungi l'indirizzo di `area-riservata.html` del sito pubblicato (serve per i link di invito e di recupero password). **Non cambiare la Site URL**: appartiene all'altra app.
+- Authentication → URL Configuration → **Redirect URLs**: aggiungi `https://lautarigiacomo.pages.dev/area-riservata`, senza `.html` (serve per i link di invito e di recupero password). **Non cambiare la Site URL**: appartiene all'altra app.
 - Non disattivare le registrazioni ("Allow new users to sign up"): l'impostazione vale anche per l'altra app. Non serve: un account nuovo non può modificare nulla se non è in `lautari_collaboratori`.
 - Le email di invito e di recupero usano i modelli del progetto, condivisi con l'altra app.
